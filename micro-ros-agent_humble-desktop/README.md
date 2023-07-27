@@ -26,6 +26,13 @@ Micro-ROS agent launch command:
 ros2 run micro_ros_agent micro_ros_agent udp4 -p 8888
 ```
 
+Docker run command, launches Micro-ROS agent automatically:
+```
+docker run --name micro-ros-agent-desktop -it --rm -p 8888:8888/udp \
+  -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 \
+  kaiaai/micro-ros-agent:humble-desktop udp4 -p 8888
+```
+
 Docker command to open an extra bash terminal:
 ```
 docker exec -it micro-ros-agent-desktop bash
