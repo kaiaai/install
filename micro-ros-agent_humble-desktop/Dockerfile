@@ -2,6 +2,9 @@
 # docker run --name micro-ros-agent-desktop -it --rm -p 8888:8888/udp
 #   -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0
 #   kaiaai/micro-ros-agent:humble-desktop
+# docker run --name micro-ros-agent-desktop -it --rm -p 8888:8888/udp
+#   -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0
+#   kaiaai/micro-ros-agent:humble-desktop udp4 -p 8888
 # ros2 run micro_ros_agent micro_ros_agent udp4 -p 8888
 FROM kaiaai/micro-ros-base:humble-desktop AS micro-ros-agent-builder
 
@@ -32,4 +35,4 @@ RUN echo ". /uros_ws/install/setup.bash" >> ~/.bashrc
 # setup entrypoint
 COPY ./micro-ros_entrypoint.sh /
 ENTRYPOINT ["/bin/sh", "/micro-ros_entrypoint.sh"]
-CMD ["--help"]
+CMD ["bash"]
