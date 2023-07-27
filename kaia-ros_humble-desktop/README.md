@@ -2,7 +2,8 @@ A Docker file to build the Kaia.ai ROS development image. The Docker image conta
 - ROS2 with its desktop environment
 - Micro-ROS including the Micro-ROS agent
 - A workspace with Kaia.ai ROS2 packages
-The pre-built image is available at https://hub.docker.com/r/kaiaai/kaia-ros
+
+A pre-built image is available at https://hub.docker.com/r/kaiaai/kaia-ros
 
 Docker pre-built image pull command:\
 `docker pull kaiaai/kaia-ros:humble-desktop`
