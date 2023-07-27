@@ -2,7 +2,10 @@
 # docker run --name kaia-ros -it --rm -p 8888:8888/udp
 #   -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0
 #   kaiaai/kaia-ros:humble-desktop
-FROM micro-ros-agent:humble-desktop
+# docker run --name kaia-ros -it --rm -p 8888:8888/udp
+#   -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0
+#   kaiaai/kaia-ros:humble-desktop launch
+FROM kaiaai/micro-ros-agent:humble-desktop
 
 RUN apt update \
 &&  apt install -y nano \
@@ -22,6 +25,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
 
 EXPOSE 8888/udp
-COPY ./kaia-ros_entrypoint.sh /
-ENTRYPOINT ["/bin/sh", "/kaia-ros_entrypoint.sh"]
-CMD ["--help"]
+RUN rm /*.sh
+COPY ./kaia-ros-entrypoint.sh /
+ENTRYPOINT ["/bin/sh", "/kaia-ros-entrypoint.sh"]
+CMD ["bash"]
