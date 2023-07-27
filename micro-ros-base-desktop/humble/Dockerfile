@@ -1,4 +1,3 @@
-# docker build -t kaiaai/micro-ros-base:humble-desktop .
 FROM osrf/ros:humble-desktop
 
 WORKDIR /uros_ws

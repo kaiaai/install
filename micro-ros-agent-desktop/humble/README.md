@@ -1,4 +1,4 @@
-A Docker file to build a ROS2 development image. The Docker image contains:
+A Docker file to build a ROS2 desktop development image that includes the Micro-ROS agent. The Docker image contains:
 - ROS2 with its desktop environment
 - Micro-ROS including the Micro-ROS agent
 
@@ -6,19 +6,19 @@ A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/m
 
 Docker pre-built image pull command:
 ```
-docker pull kaiaai/micro-ros-agent:humble-desktop
+docker pull kaiaai/micro-ros-agent-desktop:humble
 ```
 
 Docker image build command:
 ```
-docker build -t kaiaai/micro-ros-agent:humble-desktop .
+docker build -t kaiaai/micro-ros-agent-desktop:humble .
 ```
 
 Docker run command:
 ```
 docker run --name micro-ros-agent-desktop -it --rm -p 8888:8888/udp \
   -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 \
-  kaiaai/micro-ros-agent:humble-desktop
+  kaiaai/micro-ros-agent-desktop:humble
 ```
 
 Micro-ROS agent launch command:
@@ -30,7 +30,7 @@ Docker run command, launches Micro-ROS agent automatically:
 ```
 docker run --name micro-ros-agent-desktop -it --rm -p 8888:8888/udp \
   -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 \
-  kaiaai/micro-ros-agent:humble-desktop udp4 -p 8888
+  kaiaai/micro-ros-agent-desktop:humble udp4 -p 8888
 ```
 
 Docker command to open an extra bash terminal:

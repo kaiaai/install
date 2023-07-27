@@ -7,19 +7,19 @@ A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/k
 
 Docker pre-built image pull command:
 ```
-docker pull kaiaai/kaia-ros:humble-desktop
+docker pull kaiaai/kaia-ros-desktop:humble
 ```
 
 Docker image build command:
 ```
-docker build --no-cache -t kaiaai/kaia-ros:humble-desktop .
+docker build --no-cache -t kaiaai/kaia-ros-desktop:humble .
 ```
 
 Docker run command:
 ```
-docker run --name kaia-ros -it --rm -p 8888:8888/udp \
+docker run --name kaia-ros-desktop-humble -it --rm -p 8888:8888/udp \
   -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 \
-  kaiaai/kaia-ros:humble-desktop
+  kaiaai/kaia-ros-desktop:humble
 ```
 
 Kaia.ai ROS2 launch command:
@@ -27,16 +27,16 @@ Kaia.ai ROS2 launch command:
 ros2 launch kaia_launch launch.py
 ```
 
-Docker run command that launches Kaia.ai (including Micro-ROS agent) automatically:
+Docker run command that launches the Kaia.ai application stack (including Micro-ROS agent) automatically:
 ```
-docker run --name kaia-ros -it --rm -p 8888:8888/udp \
+docker run --name kaia-ros-desktop-humble -it --rm -p 8888:8888/udp \
   -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 \
-  kaiaai/kaia-ros:humble-desktop launch
+  kaiaai/kaia-ros-desktop-humble:humble launch
 ```
 
 Docker command to open an extra bash terminal:
 ```
-docker exec -it kaia-ros bash
+docker exec -it kaia-ros-desktop-humble bash
 ```
 
 When running in Docker for Windows, use [XLaunch](https://sourceforge.net/projects/xming/) to display GUI from the container (rviz, etc.)
