@@ -9,4 +9,9 @@ if [ "$MICROROS_DISABLE_SHM" = "1" ] ; then
     fi
 fi
 
-# exec ros2 run micro_ros_agent micro_ros_agent "$@"
+if [ $# -eq 0 ]; then
+  exec ros2 run micro_ros_agent micro_ros_agent "$@"
+else
+  set -e
+  exec "$@"
+fi
