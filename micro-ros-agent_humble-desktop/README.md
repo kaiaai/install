@@ -1,7 +1,8 @@
 A Docker file to build a ROS2 development image. The Docker image contains:
 - ROS2 with its desktop environment
 - Micro-ROS including the Micro-ROS agent
-The pre-built image is available at https://hub.docker.com/r/kaiaai/micro-ros-agent
+
+A pre-built image is available at https://hub.docker.com/r/kaiaai/micro-ros-agent
 
 Docker pre-built image pull command:\
 `docker pull kaiaai/micro-ros-agent:humble-desktop`
