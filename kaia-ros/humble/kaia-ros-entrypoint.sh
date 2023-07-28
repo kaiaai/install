@@ -10,6 +10,12 @@ if [ "$MICROROS_DISABLE_SHM" = "1" ] ; then
     fi
 fi
 
-exec ros2 launch kaia_launch launch.py
+if [ "$1" = "launch" ]; then
+  exec ros2 launch kaia_launch launch.py
+# TODO pass remaining Docker command lilne params to micro_ros_agent
 # exec ros2 run micro_ros_agent micro_ros_agent "$@"
 # ros2 run micro_ros_agent micro_ros_agent udp4 -p 8888
+else
+  set -e
+  exec "$@"
+fi

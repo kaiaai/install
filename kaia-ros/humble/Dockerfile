@@ -1,5 +1,3 @@
-# docker build --no-cache -t kaiaai/kaia-ros:humble .
-# docker run --name kaia-ros -it --rm -p 8888:8888/udp kaiaai/kaia-ros:humble
 FROM ros:humble AS kaia-builder
 
 WORKDIR /ros_ws
@@ -23,6 +21,7 @@ RUN apt update \
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
 
 EXPOSE 8888/udp
-COPY ./kaia-ros_entrypoint.sh /
-ENTRYPOINT ["/bin/sh", "/kaia-ros_entrypoint.sh"]
-CMD ["--help"]
+RUN rm /*.sh
+COPY ./kaia-ros-entrypoint.sh /
+ENTRYPOINT ["/bin/sh", "/kaia-ros-entrypoint.sh"]
+CMD ["bash"]
