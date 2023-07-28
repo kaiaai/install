@@ -1,26 +1,30 @@
+FROM kaiaai/micro-ros-base-desktop:humble AS micro-ros-agent-builder
+
+WORKDIR /uros_ws
+RUN . /opt/ros/$ROS_DISTRO/setup.sh \
+&&  . install/local_setup.sh \
+&&  apt update \
+&&  ros2 run micro_ros_setup create_agent_ws.sh \
+&&  ros2 run micro_ros_setup build_agent.sh \
+&&  rm -rf log/ build/ src/
+
+#FROM ros:humble-ros-core
 FROM osrf/ros:humble-desktop
+
+COPY --from=micro-ros-agent-builder /uros_ws /uros_ws
 
 WORKDIR /uros_ws
 
-RUN git clone --depth 1 -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup \
-&&  . /opt/ros/$ROS_DISTRO/setup.sh \
-&&  apt update \
-&&  apt install -y ed python3-pip \
-&&  apt install -y ros-$ROS_DISTRO-rmw-fastrtps-cpp \
-&&  apt remove -y ros-$ROS_DISTRO-rmw-cyclonedds-cpp \
-&&  apt autoremove -y \
-&&  rosdep update --rosdistro $ROS_DISTRO\
-&&  rosdep install --from-paths src --ignore-src -y \
-&&  colcon build \
-&&  rm -rf log/ build/ src/* \
-&&  rm -rf /var/lib/apt/lists/*
-
-COPY ./micro-ros_entrypoint.sh /micro-ros_entrypoint.sh
+# Disable shared memory
+COPY disable_fastdds_shm.xml disable_fastdds_shm_localhost_only.xml /tmp/
 
 ENV RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+ENV MICROROS_DISABLE_SHM=1
 
 RUN echo ". /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 RUN echo ". /uros_ws/install/setup.bash" >> ~/.bashrc
 
-ENTRYPOINT ["/micro-ros_entrypoint.sh"]
+# setup entrypoint
+COPY ./micro-ros_entrypoint.sh /
+ENTRYPOINT ["/bin/sh", "/micro-ros_entrypoint.sh"]
 CMD ["bash"]
