@@ -1,8 +1,9 @@
-A Docker file to build a ROS2 desktop development image that includes the Micro-ROS agent. The Docker image contains:
+This Docker file builds a ROS2 desktop development image that includes the Micro-ROS agent:
 - ROS2 with its desktop environment
-- Micro-ROS including the Micro-ROS agent
+- Micro-ROS
+- Micro-ROS agent
 
-A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/micro-ros-agent)
+Docker uses this image as an intermediate step to build kaiaai/kaia-ros, kaiaai/kaia-ros-desktop Docker images. A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/micro-ros-agent-desktop)
 
 Docker pre-built image pull command:
 ```
