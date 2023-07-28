@@ -4,7 +4,7 @@ This Docker file builds a ROS2 desktop development image that includes Micro-ROS
 
 Docker uses this image as an intermediate step to build other kaiaai/ Docker images. There is no need to run this image in Docker - in other words you can essentially ignore this image.
 
-A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/micro-ros-agent)
+A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/micro-ros-base-desktop)
 
 Docker image build command:
 ```
