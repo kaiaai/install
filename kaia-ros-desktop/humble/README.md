@@ -3,7 +3,7 @@ A Docker file to build the Kaia.ai ROS development image. The Docker image conta
 - Micro-ROS including the Micro-ROS agent
 - A workspace with Kaia.ai ROS2 packages
 
-A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/kaia-ros)
+A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/kaia-ros-desktop)
 
 Docker pre-built image pull command:
 ```
@@ -31,7 +31,7 @@ Docker run command that launches the Kaia.ai application stack (including Micro-
 ```
 docker run --name kaia-ros-desktop-humble -it --rm -p 8888:8888/udp \
   -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 \
-  kaiaai/kaia-ros-desktop-humble:humble launch
+  kaiaai/kaia-ros-desktop:humble launch
 ```
 
 Docker command to open an extra bash terminal:
