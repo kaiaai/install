@@ -3,7 +3,7 @@ A Docker file to build the Kaia.ai ROS development image. The Docker image conta
 - Micro-ROS including the Micro-ROS agent
 - A workspace with Kaia.ai ROS2 packages
 
-A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/kaia-ros)
+A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/kaia-ros-desktop)
 
 Docker pre-built image pull command:
 ```
