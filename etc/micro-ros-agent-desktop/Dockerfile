@@ -1,4 +1,5 @@
-FROM kaiaai/micro-ros-base-desktop:humble AS micro-ros-agent-builder
+ARG distro_tag=humble
+FROM kaiaai/micro-ros-base-desktop:$distro_tag AS micro-ros-agent-builder
 
 WORKDIR /uros_ws
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
@@ -8,8 +9,8 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  ros2 run micro_ros_setup build_agent.sh \
 &&  rm -rf log/ build/ src/
 
-#FROM ros:humble-ros-core
-FROM osrf/ros:humble-desktop
+#FROM ros:$distro-ros-core
+FROM osrf/ros:$distro_tag-desktop
 
 COPY --from=micro-ros-agent-builder /uros_ws /uros_ws
 

@@ -1,4 +1,9 @@
-FROM ros:humble AS kaia-builder
+ARG distro_tag=humble
+FROM kaiaai/micro-ros-agent-desktop:$distro_tag
+RUN apt update \
+&&  apt install -y nano \
+&&  apt autoremove -y \
+&&  rm -rf /var/lib/apt/lists/*
 
 WORKDIR /ros_ws
 
@@ -7,16 +12,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone https://github.com/kaiaai/kaia_telem src/kaia_telem \
 &&  git clone https://github.com/kaiaai/kaia_launch src/kaia_launch \
 &&  colcon build \
-&&  rm -rf log/ build/ src/
-
-FROM microros/micro-ros-agent:humble
-
-COPY --from=kaia-builder /ros_ws /ros_ws
-
-RUN apt update \
-&&  apt install -y ros-$ROS_DISTRO-geometry2 \
-&&  apt autoremove -y \
-&&  rm -rf /var/lib/apt/lists/*
+&&  rm -rf log/ build/
 
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
 

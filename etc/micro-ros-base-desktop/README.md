@@ -6,7 +6,8 @@ Docker uses this image as an intermediate step to build other kaiaai/ Docker ima
 
 A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/micro-ros-base-desktop)
 
-Docker image build command:
+Docker image build command examples:
 ```
 docker build -t kaiaai/micro-ros-base-desktop:humble .
+docker build -t kaiaai/micro-ros-base-desktop:iron --build-arg distro_tag=iron .
 ```

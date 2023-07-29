@@ -10,9 +10,10 @@ Docker pre-built image pull command:
 docker pull kaiaai/micro-ros-agent-desktop:humble
 ```
 
-Docker image build command:
+Docker image build command examples:
 ```
 docker build -t kaiaai/micro-ros-agent-desktop:humble .
+docker build -t kaiaai/micro-ros-agent-desktop:iron --build-arg distro_tag=iron .
 ```
 
 Docker run command:

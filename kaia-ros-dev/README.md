@@ -11,9 +11,10 @@ Docker pre-built image pull command:
 docker pull kaiaai/kaia-ros-dev:humble
 ```
 
-Docker image build command:
+Docker image build command examples:
 ```
 docker build --no-cache -t kaiaai/kaia-ros-dev:humble .
+docker build --no-cache -t kaiaai/kaia-ros-dev:iron --build-arg distro_tag=iron .
 ```
 
 Docker run command:
