@@ -22,7 +22,7 @@ Docker run command:
 docker run --name kaia-ros-humble -it --rm -p 8888:8888/udp kaiaai/kaia-ros:humble
 ```
 
-Kaia.ai ROS2 launch command:
+[Kaia.ai](https://kaia.ai/) ROS2 launch command:
 ```
 ros2 launch kaia_launch launch.py
 ```
