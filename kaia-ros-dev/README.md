@@ -1,4 +1,4 @@
-This Docker file builds the Kaia.ai development image. The Docker image contains:
+This Docker file builds the [Kaia.ai](https://kaia.ai/) development image. The Docker image contains:
 - ROS2 with its desktop environment (rviz, etc.)
 - Micro-ROS base
 - Micro-ROS agent
