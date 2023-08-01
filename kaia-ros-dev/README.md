@@ -24,12 +24,12 @@ docker run --name kaia-ros-dev-humble -it --rm -p 8888:8888/udp \
   kaiaai/kaia-ros-dev:humble
 ```
 
-Kaia.ai ROS2 stack launch command:
+[Kaia.ai](https://kaia.ai/) ROS2 stack launch command:
 ```
 ros2 launch kaia_launch launch.py
 ```
 
-Docker run command that launches the Kaia.ai application stack (including the Micro-ROS agent) automatically:
+Docker run command that launches the [Kaia.ai](https://kaia.ai/) application stack (including the Micro-ROS agent) automatically:
 ```
 docker run --name kaia-ros-dev-humble -it --rm -p 8888:8888/udp \
   -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 \
