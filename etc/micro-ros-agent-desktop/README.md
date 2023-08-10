@@ -13,8 +13,7 @@ docker pull kaiaai/micro-ros-agent-desktop:humble
 
 Docker image build command examples:
 ```
-docker build -t kaiaai/micro-ros-agent-desktop:humble .
-docker build -t kaiaai/micro-ros-agent-desktop:iron --build-arg distro_tag=iron .
+docker build -t kaiaai/micro-ros-agent-desktop:humble --build-arg distro_tag=humble .
 ```
 
 Docker run command:

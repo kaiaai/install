@@ -10,6 +10,5 @@ A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/m
 
 Docker image build command examples:
 ```
-docker build -t kaiaai/micro-ros-base-desktop:humble .
-docker build -t kaiaai/micro-ros-base-desktop:iron --build-arg distro_tag=iron .
+docker build -t kaiaai/micro-ros-base-desktop:humble --build-arg distro_tag=humble .
 ```
