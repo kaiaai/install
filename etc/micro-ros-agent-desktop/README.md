@@ -3,7 +3,8 @@ This Docker file builds a ROS2 desktop development image that includes the Micro
 - Micro-ROS
 - Micro-ROS agent
 
-Docker uses this image as an intermediate step to build kaiaai/kaia-ros, kaiaai/kaia-ros-desktop Docker images. A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/micro-ros-agent-desktop)
+Docker uses this image as an intermediate step to build kaiaai/kaia-ros, kaiaai/kaia-ros-desktop Docker images.
+A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/micro-ros-agent-desktop)
 
 Docker pre-built image pull command:
 ```
@@ -40,4 +41,5 @@ Docker command to open an extra bash terminal:
 docker exec -it micro-ros-agent-desktop bash
 ```
 
-When running in Docker for Windows, use [XLaunch](https://sourceforge.net/projects/xming/) to display GUI from the container (rviz, etc.) When launching XLaunch, set its display number to zero.
+When running in Docker for Windows, use [XLaunch](https://sourceforge.net/projects/xming/) to display GUI from
+the container (rviz, etc.) When launching XLaunch, set its display number to zero.

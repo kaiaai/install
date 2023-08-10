@@ -1,20 +1,25 @@
 ARG distro_tag=humble
 FROM kaiaai/micro-ros-agent-desktop:$distro_tag
 RUN apt update \
-&&  apt install -y nano \
+&&  apt install -y nano ros-$ROS_DISTRO-gazebo-ros-pkgs ros-$ROS_DISTRO-cartographer-ros \
+ros-$ROS_DISTRO-nav2-map-server ros-$ROS_DISTRO-nav2-bringup \
+ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-joint-state-publisher-gui ros-$ROS_DISTRO-xacro \
 &&  apt autoremove -y \
 &&  rm -rf /var/lib/apt/lists/*
 
 WORKDIR /ros_ws
 
+# TODO git clone -b $ROS_DISTRO
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone https://github.com/kaiaai/kaia_msgs src/kaia_msgs \
-&&  git clone https://github.com/kaiaai/kaia_telem src/kaia_telem \
-&&  git clone https://github.com/kaiaai/kaia_launch src/kaia_launch \
+&&  git clone https://github.com/kaiaai/kaia src/kaia \
+&&  git clone https://github.com/kaiaai/kaia_simulations src/kaia_simulations \
+&&  git clone https://github.com/kaiaai/kaia_cli src/kaia_cli \
 &&  colcon build \
 &&  rm -rf log/ build/
 
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
+RUN echo "export KAIA_BOT_MODEL=snoopy" >> ~/.bashrc
 
 EXPOSE 8888/udp
 RUN rm /*.sh
