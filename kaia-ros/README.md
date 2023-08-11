@@ -7,12 +7,19 @@ mode only and does not contain ROS2 desktop developer tools (no rviz, etc.):
 
 A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/kaia-ros)
 
-## Launching the Docker image
-Executed from a Windows or Linux shell, this command runs the Docker image and launches
-Kaia.ai application stack automatically, including the Micro-ROS agent:
+## Your PC setup
+- If you are using a Windows PC, install [Windows WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install)
+and [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
+- When using a Linux PC, install [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) or
+[Docker Desktop](https://docs.docker.com/desktop/install/linux-install/) (with GUI)
+
+## Launch the end-user Docker image
+Open a Linux or Windows shell and run this command:
 ```
 docker run --name kaia-ros-humble -it --rm -p 8888:8888/udp kaiaai/kaia-ros:humble launch
 ```
+The command above spins up the Docker image and launches Kaia.ai application stack automatically,
+including the Micro-ROS agent:
 
 ## Modifying and Debugging the Docker image
 If you would like to adapt this Docker image to your robot, run the Docker image without
