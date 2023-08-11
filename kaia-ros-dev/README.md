@@ -6,7 +6,16 @@ This Docker file builds the [Kaia.ai](https://kaia.ai/) development image. The D
 
 A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/kaia-ros-dev)
 
-## Launching the Docker image
+## Your PC setup
+- If you are using a Windows PC, install [Windows WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install)
+and [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
+- When running in Docker for Windows, also install [XLaunch](https://sourceforge.net/projects/xming/)
+to display GUI from the container - Rviz2, Gazebo, rqt, etc. Launch XLaunch and set its
+*display number to zero* when prompted.
+- When using a Linux PC, install [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) or
+[Docker Desktop](https://docs.docker.com/desktop/install/linux-install/) (with GUI)
+
+## Launch the development Docker image
 Executed from a Windows or Linux shell, this command runs the Docker image and launches
 Kaia.ai application stack automatically, including the Micro-ROS agent:
 ```
