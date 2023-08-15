@@ -7,6 +7,7 @@ WORKDIR /ros_ws
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone --depth 1 https://github.com/kaiaai/kaia_msgs src/kaia_msgs \
 &&  git clone --depth 1 https://github.com/kaiaai/kaia src/kaia \
+&&  git clone --depth 1 https://github.com/kaiaai/kaia_descriptions src/kaia_descriptions \
 &&  git clone --depth 1 https://github.com/kaiaai/kaia_cli src/kaia_cli \
 &&  colcon build \
 &&  rm -rf log/ build/ src/
@@ -22,8 +23,7 @@ ros-$ROS_DISTRO-nav2-map-server ros-$ROS_DISTRO-nav2-bringup \
 &&  rm -rf /var/lib/apt/lists/*
 
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
-RUN echo "export KAIA_BOT_MODEL=snoopy" >> ~/.bashrc
-RUN echo "export KAIA_BOT_PACKAGE=kaia_description" >> ~/.bashrc
+RUN echo "export KAIA_ROBOT_DESCRIPTION=kaia_snoopy_description" >> ~/.bashrc
 RUN echo "alias kaia='ros2 run kaia_cli cli'" >> ~/.bashrc
 
 EXPOSE 8888/udp
