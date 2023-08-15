@@ -11,7 +11,13 @@ A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/k
 - If you are using a Windows PC, install [Windows WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install)
 and [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
 - When using a Linux PC, install [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) or
-[Docker Desktop](https://docs.docker.com/desktop/install/linux-install/) (with GUI)
+[Docker Desktop](https://docs.docker.com/desktop/install/linux-install/) (with GUI).
+On Ubuntu 22.04 you can run
+```
+git clone --depth 1 https://github.com/kaiaai/docker
+cd docker
+. utils/install_docker_on_ubuntu.sh
+```
 
 ## Launch the end-user Docker image
 Open a Linux or Windows shell and run this command:
