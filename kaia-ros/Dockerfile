@@ -5,7 +5,6 @@ WORKDIR /ros_ws
 
 # TODO git clone -b $ROS_DISTRO
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-&&  git clone --depth 1 https://github.com/kaiaai/kaia_msgs src/kaia_msgs \
 &&  git clone --depth 1 https://github.com/kaiaai/kaia src/kaia \
 &&  git clone --depth 1 https://github.com/kaiaai/kaia_descriptions src/kaia_descriptions \
 &&  git clone --depth 1 https://github.com/kaiaai/kaia_cli src/kaia_cli \
