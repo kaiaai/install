@@ -16,6 +16,7 @@ and [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows
 ## Launch the end-user Docker image
 Open a Linux or Windows shell and run this command:
 ```
+docker pull kaiaai/kaia-ros:humble
 docker run --name kaia-ros-humble -it --rm -p 8888:8888/udp kaiaai/kaia-ros:humble launch
 ```
 The command above spins up the Docker image and launches Kaia.ai application stack automatically,
@@ -25,6 +26,7 @@ including the Micro-ROS agent:
 If you would like to adapt this Docker image to your robot, run the Docker image without
 automatically launching the Kaia.ai application stack:
 ```
+docker pull kaiaai/kaia-ros:humble
 docker run --name kaia-ros-humble -it --rm -p 8888:8888/udp kaiaai/kaia-ros:humble launch
 ```
 
