@@ -19,6 +19,7 @@ to display GUI from the container - Rviz2, Gazebo, rqt, etc. Launch XLaunch and 
 Executed from a Windows or Linux shell, this command runs the Docker image and launches
 Kaia.ai application stack automatically, including the Micro-ROS agent:
 ```
+docker pull kaiaai/kaia-ros-dev:humble
 docker run --name kaia-ros-dev-humble -it --rm -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/kaia-ros-dev:humble launch
 ```
 
@@ -26,6 +27,7 @@ docker run --name kaia-ros-dev-humble -it --rm -p 8888:8888/udp -e DISPLAY=host.
 If you would like to adapt this Docker image to your robot, run the Docker image without
 automatically launching the Kaia.ai application stack:
 ```
+docker pull kaiaai/kaia-ros-dev:humble
 docker run --name kaia-ros-dev-humble -it --rm -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/kaia-ros-dev:humble
 ```
 
