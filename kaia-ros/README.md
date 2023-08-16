@@ -47,8 +47,8 @@ Lastly, you can open an additional bash prompt using this shell command:
 docker exec -it kaia-ros-humble bash
 ```
 
-## Re-building the Docker image
-If you would like to modify and/or rebuild this image, change your current directory in
+## Re-building an individual Docker image
+If you would like to modify and/or rebuild an individual image, change your current directory in
 your shell to the location of this Docker file. Next, edit the Dockerfile and run this
 command to rebuild the Docker image tagged based on ROS2 `humble` release:
 ```
