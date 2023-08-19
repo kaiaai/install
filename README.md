@@ -1,6 +1,6 @@
 # [Kaia.ai](https://kaia.ai/) Docker images
 
-[Kaia.ai](https://kaiaai) is a platform for 3D-printable pet robots - work-in-progress. Please sign up for an early launch invite [here](https://remake.ai).
+[Kaia.ai](https://kaiaai) is a platform for 3D-printable pet robots. Please sign up for an early launch invite [here](https://remake.ai).
 
 Here are the two key images and build Docker files:
 - [Docker Image](https://hub.docker.com/r/kaiaai/kaia-ros) for End Users (Dockerfile [here](https://github.com/kaiaai/docker/tree/main/kaia-ros))
