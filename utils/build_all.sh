@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# https://docs.docker.com/engine/install/ubuntu/
+# docker system prune -f -a
+# docker login -u username
 cd ./kaia-ros
 sudo docker image rm kaiaai/kaia-ros:humble
 sudo docker build --no-cache -t kaiaai/kaia-ros:humble --build-arg distro_tag=humble .
