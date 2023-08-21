@@ -17,8 +17,10 @@ FROM microros/micro-ros-agent:$distro_tag
 COPY --from=kaia-builder /ros_ws /ros_ws
 
 RUN apt update \
-&&  apt install -y ros-$ROS_DISTRO-geometry2 ros-$ROS_DISTRO-cartographer-ros \
+&&  apt install -y nano inotify-tools
+ros-$ROS_DISTRO-geometry2 ros-$ROS_DISTRO-cartographer-ros \
 ros-$ROS_DISTRO-nav2-map-server ros-$ROS_DISTRO-nav2-bringup \
+ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro \
 &&  apt autoremove -y \
 &&  rm -rf /var/lib/apt/lists/*
 
@@ -26,7 +28,7 @@ RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
 RUN echo "export KAIA_ROBOT_DESCRIPTION=kaia_snoopy_description" >> ~/.bashrc
 RUN echo "alias kaia='ros2 run kaia_cli cli'" >> ~/.bashrc
 
-EXPOSE 8888/udp
+# EXPOSE 8888/udp
 RUN rm /*.sh
 COPY ./kaia-ros-entrypoint.sh /
 ENTRYPOINT ["/bin/sh", "/kaia-ros-entrypoint.sh"]
