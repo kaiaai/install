@@ -17,7 +17,7 @@ FROM microros/micro-ros-agent:$distro_tag
 COPY --from=kaia-builder /ros_ws /ros_ws
 
 RUN apt update \
-&&  apt install -y nano inotify-tools
+&&  apt install -y nano inotify-tools \
 ros-$ROS_DISTRO-geometry2 ros-$ROS_DISTRO-cartographer-ros \
 ros-$ROS_DISTRO-nav2-map-server ros-$ROS_DISTRO-nav2-bringup \
 ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro \
