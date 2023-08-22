@@ -19,7 +19,8 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone https://github.com/kaiaai/kaia_simulations src/kaia_simulations \
 &&  git clone https://github.com/kaiaai/kaia_cli src/kaia_cli \
 &&  colcon build --symlink-install \
-&&  rm -rf log/ build/
+&&  rm -rf log/
+# rm -rf build/
 
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
 RUN echo "export KAIA_ROBOT_DESCRIPTION=kaia_snoopy_description" >> ~/.bashrc
