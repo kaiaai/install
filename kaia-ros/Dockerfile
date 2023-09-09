@@ -1,21 +1,21 @@
 ARG distro_tag=humble
-FROM ros:$distro_tag AS kaia-builder
+FROM ros:$distro_tag AS kaiaai-builder
 
 WORKDIR /ros_ws
 
 # TODO git clone -b $ROS_DISTRO
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-&&  git clone --depth 1 https://github.com/kaiaai/kaia_msgs src/kaia_msgs \
-&&  git clone --depth 1 https://github.com/kaiaai/kaia src/kaia \
+&&  git clone --depth 1 https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs \
+&&  git clone --depth 1 https://github.com/kaiaai/kaiaai src/kaiaai \
 &&  git clone --depth 1 https://github.com/makerspet/kaiaai_loki src/kaiaai_loki \
 &&  git clone --depth 1 https://github.com/makerspet/kaiaai_snoopy src/kaiaai_snoopy \
-&&  git clone --depth 1 https://github.com/kaiaai/kaia_cli src/kaia_cli \
+&&  git clone --depth 1 https://github.com/kaiaai/kaiaai_cli src/kaiaai_cli \
 &&  colcon build \
 &&  rm -rf log/ build/ src/
 
 FROM microros/micro-ros-agent:$distro_tag
 
-COPY --from=kaia-builder /ros_ws /ros_ws
+COPY --from=kaiaai-builder /ros_ws /ros_ws
 
 RUN apt update \
 &&  apt install -y nano inotify-tools \
@@ -27,10 +27,10 @@ ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro \
 
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
 RUN echo "export KAIAAI_ROBOT=kaiaai_snoopy" >> ~/.bashrc
-RUN echo "alias kaia='ros2 run kaia_cli cli'" >> ~/.bashrc
+RUN echo "alias kaiaai='ros2 run kaiaai_cli cli'" >> ~/.bashrc
 
 # EXPOSE 8888/udp
 RUN rm /*.sh
-COPY ./kaia-ros-entrypoint.sh /
-ENTRYPOINT ["/bin/sh", "/kaia-ros-entrypoint.sh"]
+COPY ./kaiaai-ros-entrypoint.sh /
+ENTRYPOINT ["/bin/sh", "/kaiaai-ros-entrypoint.sh"]
 CMD ["bash"]

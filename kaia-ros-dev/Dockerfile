@@ -13,22 +13,22 @@ WORKDIR /ros_ws
 
 # TODO git clone -b $ROS_DISTRO
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-&&  git clone https://github.com/kaiaai/kaia_msgs src/kaia_msgs \
-&&  git clone https://github.com/kaiaai/kaia src/kaia \
+&&  git clone https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs \
+&&  git clone https://github.com/kaiaai/kaiaai src/kaiaai \
 &&  git clone https://github.com/makerspet/kaiaai_loki src/kaiaai_loki \
 &&  git clone https://github.com/makerspet/kaiaai_snoopy src/kaiaai_snoopy \
-&&  git clone https://github.com/kaiaai/kaia_simulations src/kaia_simulations \
-&&  git clone https://github.com/kaiaai/kaia_cli src/kaia_cli \
+&&  git clone https://github.com/kaiaai/kaiaai_simulations src/kaiaai_simulations \
+&&  git clone https://github.com/kaiaai/kaiaai_cli src/kaiaai_cli \
 &&  colcon build --symlink-install \
 &&  rm -rf log/
 # rm -rf build/
 
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
 RUN echo "export KAIAAI_ROBOT=kaiaai_snoopy" >> ~/.bashrc
-RUN echo "alias kaia='ros2 run kaia_cli cli'" >> ~/.bashrc
+RUN echo "alias kaiaai='ros2 run kaiaai_cli cli'" >> ~/.bashrc
 
 # EXPOSE 8888/udp
 RUN rm /*.sh
-COPY ./kaia-ros-entrypoint.sh /
-ENTRYPOINT ["/bin/sh", "/kaia-ros-entrypoint.sh"]
+COPY ./kaiaai-ros-entrypoint.sh /
+ENTRYPOINT ["/bin/sh", "/kaiaai-ros-entrypoint.sh"]
 CMD ["bash"]
