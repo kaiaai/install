@@ -18,9 +18,7 @@ docker build -t kaiaai/micro-ros-agent-desktop:humble --build-arg distro_tag=hum
 
 Docker run command:
 ```
-docker run --name micro-ros-agent-desktop -it --rm -p 8888:8888/udp \
-  -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 \
-  kaiaai/micro-ros-agent-desktop:humble
+docker run --name micro-ros-agent-desktop -it --rm -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/micro-ros-agent-desktop:humble
 ```
 
 Micro-ROS agent launch command:
