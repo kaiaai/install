@@ -34,7 +34,7 @@ docker run --name kaia-ros-dev-humble -it --rm -p 8888:8888/udp -e DISPLAY=host.
 At this point you will get a bash prompt. Now you can make the modifications you would like
 to make. After that, you can launch the Kaia.ai application stack manually:
 ```
-ros2 launch kaia_bringup main.launch.py
+ros2 launch kaiaai_bringup main.launch.py
 ```
 
 Lastly, you can open an additional bash prompt using this shell command:
