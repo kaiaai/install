@@ -5,7 +5,7 @@ mode only and does not contain ROS2 desktop developer tools (no rviz, etc.):
 - Micro-ROS agent
 - A workspace with [Kaia.ai](https://kaia.ai/) ROS2 packages
 
-A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/kaia-ros)
+A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/kaiaai-ros)
 
 ## Your PC setup
 - If you are using a Windows PC, install [Windows WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install)
@@ -22,8 +22,8 @@ cd docker
 ## Launch the end-user Docker image
 Open a Linux or Windows shell and run this command:
 ```
-docker pull kaiaai/kaia-ros:humble
-docker run --name kaia-ros-humble -it --rm -p 8888:8888/udp kaiaai/kaia-ros:humble launch
+docker pull kaiaai/kaiaai-ros:humble
+docker run --name kaiaai-ros-humble -it --rm -p 8888:8888/udp kaiaai/kaiaai-ros:humble launch
 ```
 The command above spins up the Docker image and launches Kaia.ai application stack automatically,
 including the Micro-ROS agent:
@@ -32,8 +32,8 @@ including the Micro-ROS agent:
 If you would like to adapt this Docker image to your robot, run the Docker image without
 automatically launching the Kaia.ai application stack:
 ```
-docker pull kaiaai/kaia-ros:humble
-docker run --name kaia-ros-humble -it --rm -p 8888:8888/udp kaiaai/kaia-ros:humble launch
+docker pull kaiaai/kaiaai-ros:humble
+docker run --name kaiaai-ros-humble -it --rm -p 8888:8888/udp kaiaai/kaiaai-ros:humble launch
 ```
 
 At this point you will get a bash prompt. Now you can make the modifications you would like
@@ -44,7 +44,7 @@ ros2 launch kaiaai_bringup main.launch.py
 
 Lastly, you can open an additional bash prompt using this shell command:
 ```
-docker exec -it kaia-ros-humble bash
+docker exec -it kaiaai-ros-humble bash
 ```
 
 ## Re-building an individual Docker image
@@ -52,7 +52,7 @@ If you would like to modify and/or rebuild an individual image, change your curr
 your shell to the location of this Docker file. Next, edit the Dockerfile and run this
 command to rebuild the Docker image tagged based on ROS2 `humble` release:
 ```
-docker build --no-cache -t kaiaai/kaia-ros:humble --build-arg distro_tag=humble .
+docker build --no-cache -t kaiaai/kaiaai-ros:humble --build-arg distro_tag=humble .
 ```
 To rebuild the image based on a different release just replace
 `humble` tags with your desired tag, e.g. `iron` or `rolling`.
