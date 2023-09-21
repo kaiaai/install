@@ -1,3 +1,4 @@
+docker login -u kaiaai
 cd .\kaiaai-ros
 docker image rm kaiaai/kaiaai-ros:humble
 docker build --no-cache -t kaiaai/kaiaai-ros:humble --build-arg distro_tag=humble .
