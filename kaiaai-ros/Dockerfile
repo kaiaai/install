@@ -7,11 +7,15 @@ WORKDIR /ros_ws
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone --depth 1 https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs \
 &&  git clone --depth 1 https://github.com/kaiaai/kaiaai src/kaiaai \
+&&  git clone --depth 1 https://github.com/makerspet/makerspet_loki src/makerspet_fido \
 &&  git clone --depth 1 https://github.com/makerspet/makerspet_loki src/makerspet_loki \
 &&  git clone --depth 1 https://github.com/makerspet/makerspet_snoopy src/makerspet_snoopy \
 &&  git clone --depth 1 https://github.com/kaiaai/kaiaai_cli src/kaiaai_cli \
 &&  colcon build \
 &&  rm -rf log/ build/ src/
+&&  rm -rf src/makerspet_fido/hardware/
+&&  rm -rf src/makerspet_loki/hardware/
+&&  rm -rf src/makerspet_snoopy/hardware/
 
 FROM microros/micro-ros-agent:$distro_tag
 
