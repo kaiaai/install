@@ -15,6 +15,7 @@ WORKDIR /ros_ws
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs \
 &&  git clone https://github.com/kaiaai/kaiaai src/kaiaai \
+&&  git clone https://github.com/makerspet/makerspet_loki src/makerspet_fido \
 &&  git clone https://github.com/makerspet/makerspet_loki src/makerspet_loki \
 &&  git clone https://github.com/makerspet/makerspet_snoopy src/makerspet_snoopy \
 &&  git clone https://github.com/kaiaai/kaiaai_simulations src/kaiaai_simulations \
