@@ -1,3 +1,5 @@
+# Windows PowerShell script
+
 docker login
 docker system prune -f -a
 cd .\kaiaai-ros
