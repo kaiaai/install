@@ -25,7 +25,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 # rm -rf build/
 
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
-RUN echo "export KAIAAI_ROBOT=makerspet_snoopy" >> ~/.bashrc
+# RUN echo "export KAIAAI_ROBOT=makerspet_snoopy" >> ~/.bashrc
 RUN echo "alias kaia='ros2 run kaiaai_cli cli'" >> ~/.bashrc
 
 # EXPOSE 8888/udp
