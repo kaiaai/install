@@ -11,9 +11,6 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone --depth 1 https://github.com/makerspet/makerspet_loki src/makerspet_loki \
 &&  git clone --depth 1 https://github.com/makerspet/makerspet_snoopy src/makerspet_snoopy \
 &&  git clone --depth 1 https://github.com/kaiaai/kaiaai_cli src/kaiaai_cli \
-&&  rm -rf src/makerspet_fido/hardware/ \
-&&  rm -rf src/makerspet_loki/hardware/ \
-&&  rm -rf src/makerspet_snoopy/hardware/ \
 &&  colcon build \
 &&  rm -rf log/ build/ src/
 
@@ -30,11 +27,11 @@ ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro \
 &&  rm -rf /var/lib/apt/lists/*
 
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
-RUN echo "export KAIAAI_ROBOT=makerspet_snoopy" >> ~/.bashrc
+# RUN echo "export KAIAAI_ROBOT=makerspet_snoopy" >> ~/.bashrc
 RUN echo "alias kaia='ros2 run kaiaai_cli cli'" >> ~/.bashrc
 
 # EXPOSE 8888/udp
 RUN rm /*.sh
-COPY ./kaiaai-ros-entrypoint.sh /
-ENTRYPOINT ["/bin/sh", "/kaiaai-ros-entrypoint.sh"]
+COPY ./kaiaai-entrypoint.sh /
+ENTRYPOINT ["/bin/sh", "/kaiaai-entrypoint.sh"]
 CMD ["bash"]
