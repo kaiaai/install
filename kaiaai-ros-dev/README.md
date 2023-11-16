@@ -42,7 +42,7 @@ Lastly, you can open an additional bash prompt using this shell command:
 docker exec -it kaiaai-ros-dev-humble bash
 ```
 
-When running in Docker for Windows, use [XLaunch](https://sourceforge.net/projects/xming/)
+When running in Docker for Windows, use [XLaunch](https://sourceforge.net/projects/vcxsrv/)
 to display GUI from the container - Rviz2, Gazebo, rqt, etc.
 When launching XLaunch, be sure to set its display number to zero.
 
