@@ -20,7 +20,7 @@ Executed from a Windows or Linux shell, this command runs the Docker image and l
 Kaia.ai application stack automatically, including the Micro-ROS agent:
 ```
 docker pull kaiaai/kaiaai-ros-dev:humble
-docker run --name kaiaai-ros-dev-humble -it --rm -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/kaiaai-ros-dev:humble launch
+docker run --name makerspet -it --rm -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/kaiaai-ros-dev:humble launch
 ```
 
 ## Modifying and Debugging the Docker image
@@ -28,7 +28,7 @@ If you would like to adapt this Docker image to your robot, run the Docker image
 automatically launching the Kaia.ai application stack:
 ```
 docker pull kaiaai/kaiaai-ros-dev:humble
-docker run --name kaiaai-ros-dev-humble -it --rm -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/kaiaai-ros-dev:humble
+docker run --name makerspet -it --rm -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/kaiaai-ros-dev:humble
 ```
 
 At this point you will get a bash prompt. Now you can make the modifications you would like
