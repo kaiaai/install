@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo docker login
-docker system prune -f -a
+sudo docker system prune -f -a
 cd ./kaiaai-ros
 sudo docker image rm kaiaai/kaiaai-ros:humble
 sudo docker build --no-cache -t kaiaai/kaiaai-ros:humble --build-arg distro_tag=humble .
