@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker login
+sudo docker login
 docker system prune -f -a
 cd ./kaiaai-ros
 sudo docker image rm kaiaai/kaiaai-ros:humble
