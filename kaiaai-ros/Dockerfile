@@ -1,8 +1,9 @@
 ARG distro_tag=humble
-# FROM ros:$distro_tag AS kaiaai-builder
-FROM osrf/ros:$distro_tag-desktop-full AS kaiaai-builder
+FROM ros:$distro_tag AS kaiaai-builder
 
 WORKDIR /ros_ws
+
+RUN apt update && apt install -y ros-$ROS_DISTRO-nav2-map-server ros-$ROS_DISTRO-nav2-bringup
 
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs \
