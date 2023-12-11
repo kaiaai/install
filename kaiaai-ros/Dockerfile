@@ -1,5 +1,6 @@
 ARG distro_tag=humble
-FROM ros:$distro_tag AS kaiaai-builder
+# FROM ros:$distro_tag AS kaiaai-builder
+FROM osrf/ros:$distro_tag-desktop-full AS kaiaai-builder
 
 WORKDIR /ros_ws
 
