@@ -40,3 +40,18 @@ git clone https://github.com/kaiaai/docker
 cd docker
 .\utils\build_all.cmd
 ```
+## Release history
+1/21/2024
+- kaiaai_telemetry now supports multiple laser distance scan sensor models
+  - added Xiaomi 1st gen LDS02RR LDS; YDLIDAR X4 is default
+  - updated config/telem.yaml settings in makerspet_loki/fido/snoopy
+  - `ros2 launch kaiaai_bringup physical.launch.py robot_model:=makerspet_loki lds_model:=LDS02RR`
+  - `ros2 launch kaiaai_bringup physical.launch.py robot_model:=makerspet_loki lds_model:=YDLIDAR-X4`
+- Frontier exploration works, but needs debug
+  - `ros2 launch explore_lite explore.launch.py`
+
+12/11/2023
+- increased map saver timeout
+- Nav2 SLAM works in physical robot and in simulation
+  - `ros2 launch kaiaai_bringup navigation.launch.py robot_model:=makerspet_loki slam:=True`
+- kaiaai_teleop bugfix missing setup file
