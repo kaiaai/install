@@ -43,6 +43,7 @@ cd docker
 ## Release history
 1/28/2024
 - added YDLIDAR X2 to kaiaai_telemetry
+- Arduino firmware moved to https://github.com/kaiaai/firmware
 
 1/21/2024
 - kaiaai_telemetry now supports multiple laser distance scan sensor models
