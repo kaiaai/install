@@ -41,6 +41,9 @@ cd docker
 .\utils\build_all.cmd
 ```
 ## Release history
+1/28/2024
+- added YDLIDAR X2 to kaiaai_telemetry
+
 1/21/2024
 - kaiaai_telemetry now supports multiple laser distance scan sensor models
   - added Xiaomi 1st gen LDS02RR LDS; YDLIDAR X4 is default
