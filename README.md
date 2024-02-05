@@ -41,6 +41,17 @@ cd docker
 .\utils\build_all.cmd
 ```
 ## Release history
+2/5/2024
+- added LiDAR/LDS laser distance scan sensors support
+  - YDLIDAR X3, X3-PRO
+  - Neato XV11
+  - RPLIDAR A1
+- split kaiaai_telemetry config into default and custom
+  - `kaiaai/kaiaai_telemetry/config/telem.yaml` is the default config
+  - `makerspet_loki/config/telem.yaml` is the custom config for the Loki robot model
+  - `makerspet_fido/config/telem.yaml` is the custom config for the Fido robot model
+  - `makerspet_snoopy/config/telem.yaml` is the custom config for the Snoopy robot model
+
 1/28/2024
 - added YDLIDAR X2 to kaiaai_telemetry
 - Arduino firmware moved to https://github.com/kaiaai/firmware
