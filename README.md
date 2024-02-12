@@ -41,13 +41,13 @@ cd docker
 .\utils\build_all.cmd
 ```
 ## Release history
-2/11/2024
-- `docker pull kaiaai/kaiaai-ros-dev:humble-02-05-2024`
-- `docker pull kaiaai/kaiaai-ros-dev:iron-02-05-2024`
+### 2/11/2024
+- `docker pull kaiaai/kaiaai-ros-dev:humble-02-11-2024`
+- `docker pull kaiaai/kaiaai-ros-dev:iron-02-11-2024`
 - [ROS2 kaiaai_telemetry package](https://github.com/kaiaai/kaiaai)
   - added support for 3irobotix Delta-2A, Delta-2G laser distance scan sensors
 
-2/5/2024
+### 2/5/2024
 - `docker pull kaiaai/kaiaai-ros-dev:humble-02-05-2024`
 - `docker pull kaiaai/kaiaai-ros-dev:iron-02-05-2024`
 - added LiDAR/LDS laser distance scan sensors support
@@ -60,13 +60,13 @@ cd docker
   - `makerspet_fido/config/telem.yaml` is the custom config for the Fido robot model
   - `makerspet_snoopy/config/telem.yaml` is the custom config for the Snoopy robot model
 
-1/28/2024
+### 1/28/2024
 - `docker pull kaiaai/kaiaai-ros-dev:humble-01-28-2024`
 - `docker pull kaiaai/kaiaai-ros-dev:iron-01-28-2024`
 - added YDLIDAR X2 to kaiaai_telemetry
 - Arduino firmware moved to https://github.com/kaiaai/firmware
 
-1/21/2024
+### 1/21/2024
 - `docker pull kaiaai/kaiaai-ros-dev:humble-01-21-2024`
 - `docker pull kaiaai/kaiaai-ros-dev:iron-01-21-2024`
 - kaiaai_telemetry now supports multiple laser distance scan sensor models
@@ -77,7 +77,7 @@ cd docker
 - Frontier exploration works, but needs debug
   - `ros2 launch explore_lite explore.launch.py`
 
-12/11/2023
+### 12/11/2023
 - `docker pull kaiaai/kaiaai-ros-dev:humble-2023-12-11`
 - `docker pull kaiaai/kaiaai-ros-dev:iron-2023-12-11`
 - increased map saver timeout
