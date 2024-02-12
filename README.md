@@ -41,11 +41,15 @@ cd docker
 .\utils\build_all.cmd
 ```
 ## Release history
+2/11/2024
+- [ROS2 kaiaai_telemetry package](https://github.com/kaiaai/kaiaai)
+  - added support for 3irobotix Delta-2A, Delta-2G laser distance scan sensors
+
 2/5/2024
 - added LiDAR/LDS laser distance scan sensors support
   - YDLIDAR X3, X3-PRO
   - Neato XV11
-  - RPLIDAR A1
+  - SLAMTEC RPLIDAR A1
 - split kaiaai_telemetry config into default and custom
   - `kaiaai/kaiaai_telemetry/config/telem.yaml` is the default config
   - `makerspet_loki/config/telem.yaml` is the custom config for the Loki robot model
