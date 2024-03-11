@@ -2,7 +2,7 @@ ARG distro_tag=humble
 FROM kaiaai/kaiaai-ros-dev:$distro_tag
 RUN apt update \
 &&  apt install -y python3-pip \
-&&  pip3 install aiortc aiohttp opencv-python
+&&  pip3 install aiortc aiohttp opencv-python \
 &&  apt autoremove -y \
 &&  rm -rf /var/lib/apt/lists/*
 
