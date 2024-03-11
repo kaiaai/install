@@ -32,10 +32,8 @@ docker run --name makerspet -it --rm -p 8888:8888/udp -e DISPLAY=host.docker.int
 ```
 
 At this point you will get a bash prompt. Now you can make the modifications you would like
-to make. After that, you can launch the Kaia.ai application stack manually:
-```
-ros2 launch kaiaai_bringup main.launch.py
-```
+to make. After that, you can launch the Kaia.ai application stack manually. Please refer to
+the list of [available commands here](https://github.com/kaiaai/kaiaai).
 
 Lastly, you can open an additional bash prompt using this shell command:
 ```
