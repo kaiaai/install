@@ -13,6 +13,7 @@ This Docker file builds the [Kaia.ai](https://kaia.ai/) image. The Docker image 
 - Robot face controller (TODO)
 - Image processing (TODO)
 - Audio processing (TODO)
+- Decision making (TODO)
 
 A pre-built image is available at [Docker Hub](https://hub.docker.com/r/kaiaai/kaiaai)
 
