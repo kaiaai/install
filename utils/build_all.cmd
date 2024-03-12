@@ -28,3 +28,8 @@ docker build --no-cache -t kaiaai/kaiaai-ros-dev:humble --build-arg distro_tag=h
 wt --window 0 -d . powershell "docker push kaiaai/kaiaai-ros-dev:humble"
 docker build --no-cache -t kaiaai/kaiaai-ros-dev:iron --build-arg distro_tag=iron .
 wt --window 0 -d . powershell "docker push kaiaai/kaiaai-ros-dev:iron"
+cd ..\kaiaai
+docker build --no-cache -t kaiaai/kaiaai:humble --build-arg distro_tag=humble .
+wt --window 0 -d . powershell "docker push kaiaai/kaiaai:humble"
+docker build --no-cache -t kaiaai/kaiaai:iron --build-arg distro_tag=iron .
+wt --window 0 -d . powershell "docker push kaiaai/kaiaai:iron"

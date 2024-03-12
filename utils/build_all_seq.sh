@@ -30,3 +30,10 @@ sudo docker push kaiaai/kaiaai-ros-dev:humble
 sudo docker image rm kaiaai/kaiaai-ros-dev:iron
 sudo docker build --no-cache -t kaiaai/kaiaai-ros-dev:iron --build-arg distro_tag=iron .
 sudo docker push kaiaai/kaiaai-ros-dev:iron
+cd ../kaiaai
+sudo docker image rm kaiaai/kaiaai:humble
+sudo docker build --no-cache -t kaiaai/kaiaai:humble --build-arg distro_tag=humble .
+sudo docker push kaiaai/kaiaai:humble
+sudo docker image rm kaiaai/kaiaai:iron
+sudo docker build --no-cache -t kaiaai/kaiaai:iron --build-arg distro_tag=iron .
+sudo docker push kaiaai/kaiaai:iron
