@@ -6,9 +6,10 @@ RUN apt update \
 &&  apt autoremove -y \
 &&  rm -rf /var/lib/apt/lists/*
 
-WORKDIR /py
+WORKDIR /
 
-RUN git clone https://github.com/aiortc/aiortc.git
+#RUN git clone https://github.com/aiortc/aiortc.git
+RUN git clone https://github.com/kaiaai/kaiaai-python py
 
 WORKDIR /py/ssl
 RUN curl -LJ "https://getbin.io/suyashkumar/ssl-proxy?os=linux" | tar xvz
