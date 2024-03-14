@@ -46,6 +46,11 @@ cd docker
 .\utils\build_all.cmd
 ```
 ## Release history
+
+### TBD
+- paused building/releasing kaia-ros image
+  - use kaia-ros-dev instead of kaia-ros
+
 ### 2/11/2024
 - `docker pull kaiaai/kaiaai-ros-dev:humble-02-11-2024`
 - `docker pull kaiaai/kaiaai-ros-dev:iron-02-11-2024`

@@ -1,13 +1,6 @@
 docker login
 docker system prune -f -a
-cd .\kaiaai-ros
-docker image rm kaiaai/kaiaai-ros:humble
-docker build --no-cache -t kaiaai/kaiaai-ros:humble --build-arg distro_tag=humble .
-docker push kaiaai/kaiaai-ros:humble
-docker image rm kaiaai/kaiaai-ros:iron
-docker build --no-cache -t kaiaai/kaiaai-ros:iron --build-arg distro_tag=iron .
-docker push kaiaai/kaiaai-ros:iron
-cd ..\etc\micro-ros-base-desktop
+cd .\etc\micro-ros-base-desktop
 docker image rm kaiaai/micro-ros-base-desktop:humble
 docker build --no-cache -t kaiaai/micro-ros-base-desktop:humble --build-arg distro_tag=humble .
 docker push kaiaai/micro-ros-base-desktop:humble
@@ -28,3 +21,10 @@ docker push kaiaai/kaiaai-ros-dev:humble
 docker image rm kaiaai/kaiaai-ros-dev:iron
 docker build --no-cache -t kaiaai/kaiaai-ros-dev:iron --build-arg distro_tag=iron .
 docker push kaiaai/kaiaai-ros-dev:iron
+cd ..\kaiaai
+docker image rm kaiaai/kaiaai:humble
+docker build --no-cache -t kaiaai/kaiaai:humble --build-arg distro_tag=humble .
+docker push kaiaai/kaiaai:humble
+docker image rm kaiaai/kaiaai:iron
+docker build --no-cache -t kaiaai/kaiaai:iron --build-arg distro_tag=iron .
+docker push kaiaai/kaiaai:iron
