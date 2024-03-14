@@ -48,6 +48,7 @@ cd docker
 ## Release history
 
 ### 3/14/2024
+- added kaiaai_python package
 - paused building/releasing kaia-ros image
   - use kaia-ros-dev instead of kaia-ros
 - merged kaiaai into kaiaai-ros-dev
