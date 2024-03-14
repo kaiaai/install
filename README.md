@@ -47,10 +47,11 @@ cd docker
 ```
 ## Release history
 
-### TBD
+### 3/14/2024
 - paused building/releasing kaia-ros image
   - use kaia-ros-dev instead of kaia-ros
 - merged kaiaai into kaiaai-ros-dev
+- kaiaai_cli single main branch
 
 ### 2/11/2024
 - `docker pull kaiaai/kaiaai-ros-dev:humble-02-11-2024`
