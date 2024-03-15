@@ -6,7 +6,7 @@
   - `docker pull kaiaai/kaiaai:iron`
 - [Dockerfile](https://github.com/kaiaai/docker/tree/main/kaiaai) and build instructions 
 
-## Docker setup video
+## Docker setup video (outdated)
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=XOc5kCE3MC0" target="_blank">
  <img src="http://img.youtube.com/vi/XOc5kCE3MC0/maxresdefault.jpg" alt="Robot Arduino firmware, ROS2/Docker PC setup instructions video" width="720" height="405" border="10" />
 </a>
