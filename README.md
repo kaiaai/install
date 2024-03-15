@@ -47,7 +47,7 @@ cd docker
 ```
 ## Release history
 
-### 3/14/2024
+### 3/15/2024
 - changed default image name to kaiaai/kaiaai from kaiaai/kaiaai-ros-dev
 - merged Dockerfiles into a single one
 - added kaiaai_python package
