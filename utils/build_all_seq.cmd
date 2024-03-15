@@ -14,11 +14,17 @@ docker push kaiaai/micro-ros-agent-desktop:humble
 docker image rm kaiaai/micro-ros-agent-desktop:iron
 docker build --no-cache -t kaiaai/micro-ros-agent-desktop:iron --build-arg distro_tag=iron .
 docker push kaiaai/micro-ros-agent-desktop:iron
-cd ..\..\kaiaai-ros-dev
+cd ..\..\kaiaai
+docker image rm kaiaai/kaiaai:humble
+docker build --no-cache -t kaiaai/kaiaai:humble --build-arg distro_tag=humble .
+docker push kaiaai/kaiaai:humble
+docker image rm kaiaai/kaiaai:iron
+docker build --no-cache -t kaiaai/kaiaai:iron --build-arg distro_tag=iron .
+docker push kaiaai/kaiaai:iron
+cd ..
 docker image rm kaiaai/kaiaai-ros-dev:humble
-docker build --no-cache -t kaiaai/kaiaai-ros-dev:humble --build-arg distro_tag=humble .
+docker tag kaiaai/kaiaai:humble kaiaai/kaiaai-ros-dev:humble
 docker push kaiaai/kaiaai-ros-dev:humble
 docker image rm kaiaai/kaiaai-ros-dev:iron
-docker build --no-cache -t kaiaai/kaiaai-ros-dev:iron --build-arg distro_tag=iron .
+docker tag kaiaai/kaiaai:iron kaiaai/kaiaai-ros-dev:iron
 docker push kaiaai/kaiaai-ros-dev:iron
-cd ..
