@@ -49,6 +49,7 @@ cd docker
 
 ### 3/14/2024
 - changed default image name to kaiaai/kaiaai from kaiaai/kaiaai-ros-dev
+- merged Dockerfiles into a single one
 - added kaiaai_python package
 - paused building/releasing kaia-ros image
   - use kaia-ros-dev instead of kaia-ros
