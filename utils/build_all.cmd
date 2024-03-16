@@ -8,5 +8,5 @@ cd .\kaiaai
 docker build --no-cache -t kaiaai/kaiaai:humble --build-arg distro_tag=humble .
 wt --window 0 -d . powershell "..\utils\push_humble.cmd"
 docker build --no-cache -t kaiaai/kaiaai:iron --build-arg distro_tag=iron .
-.\push_iron.cmd
 cd ..
+.\utils\push_iron.cmd
