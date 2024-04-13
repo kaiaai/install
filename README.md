@@ -1,10 +1,11 @@
 # Kaia.ai Docker images
 
 [Kaia.ai](https://kaiaai) is a platform for 3D-printable pet robots. Please sign up for an early launch invite [here](https://remake.ai).
+
+## Download Latest Pre-Built Image
 - Docker Hub [image](https://hub.docker.com/r/kaiaai/kaiaai)
   - `docker pull kaiaai/kaiaai:humble`
   - `docker pull kaiaai/kaiaai:iron`
-- [Dockerfile](https://github.com/kaiaai/docker/tree/main/kaiaai) and build instructions 
 
 ## Docker setup video (outdated)
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=XOc5kCE3MC0" target="_blank">
@@ -45,7 +46,19 @@ git clone https://github.com/kaiaai/docker
 cd docker
 .\utils\build_all.cmd
 ```
+
 ## Release history
+=======
+### 4/13/2024 (latest)
+- `docker pull kaiaai/kaiaai:humble-04-13-2024`
+- `docker pull kaiaai/kaiaai:iron-04-13-2024`
+- fixed a webserver script crash
+
+### 3/27/2024
+- `docker pull kaiaai/kaiaai:humble-03-27-2024`
+- `docker pull kaiaai/kaiaai:iron-03-27-2024`
+- changed naming from `kaiaai-ros-dev` to `kaiaai`
+- added Camsense X1 LiDAR
 
 ### 3/15/2024
 - changed default image name to kaiaai/kaiaai from kaiaai/kaiaai-ros-dev
