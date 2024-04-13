@@ -46,17 +46,8 @@ cd docker
 .\utils\build_all.cmd
 ```
 ## Release history
-### 3/27/2024 (latest)
-- `docker pull kaiaai/kaiaai:iron`
-- `docker pull kaiaai/kaiaai:humble`
-- `docker pull kaiaai/kaiaai:humble-03-27-2024`
-- `docker pull kaiaai/kaiaai:iron-03-27-2024`
-- changed naming from `kaiaai-ros-dev` to `kaiaai`
-- added Camsense X1 LiDAR
 
 ### 3/15/2024
-- `docker pull kaiaai/kaiaai-ros-dev:humble-03-15-2024`
-- `docker pull kaiaai/kaiaai-ros-dev:iron-03-15-2024`
 - changed default image name to kaiaai/kaiaai from kaiaai/kaiaai-ros-dev
 - merged Dockerfiles into a single one
 - added kaiaai_python package
