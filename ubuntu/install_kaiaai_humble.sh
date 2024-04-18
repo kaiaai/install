@@ -4,7 +4,6 @@
 . /opt/ros/humble/setup.bash
 mkdir ~/uros_ws && cd ~/uros_ws
 git clone --depth 1 -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
-# . /opt/ros/humble/setup.sh
 sudo apt update
 sudo apt install -y ed python3-pip
 sudo apt install -y ros-humble-rmw-fastrtps-cpp
@@ -34,9 +33,8 @@ ros-humble-nav2-map-server ros-humble-nav2-bringup \
 ros-humble-joint-state-publisher ros-humble-xacro
 pip3 install aiortc aiohttp opencv-python
 sudo apt autoremove -y
-sudo rm -rf /var/lib/apt/lists/*
+# sudo rm -rf /var/lib/apt/lists/*
 
-# . /opt/ros/humble/setup.sh
 git clone -b humble --depth 1 https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs
 git clone -b humble --depth 1 https://github.com/kaiaai/kaiaai src/kaiaai
 git clone -b humble --depth 1 https://github.com/makerspet/makerspet_fido src/makerspet_fido
