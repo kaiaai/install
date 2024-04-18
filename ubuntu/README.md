@@ -1,13 +1,13 @@
-## Step 1 - Install ROS2
+## Step 1 - Install ROS2 Humble
 ```
-wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/install_ros2.sh
-chmod +x install_ros2.sh
-./install_ros2.sh
+wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/install_ros2_humble.sh
+chmod +x install_ros2_humble.sh
+./install_ros2_humble.sh
 ```
 
 ## Step 2 - Install Kaia.ai Platform
 ```
-wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/install_kaiaai.sh
-chmod +x install_kaiaai.sh
-./install_kaiaai.sh
+wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/install_kaiaai_humble.sh
+chmod +x install_kaiaai_humble.sh
+./install_kaiaai_humble.sh
 ```
