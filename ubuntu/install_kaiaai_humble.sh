@@ -1,6 +1,7 @@
 #!/bin/sh
 # Install Kaia.ai ROS2 platform
 #   https://github.com/kaiaai/install
+. /opt/ros/humble/setup.bash
 mkdir ~/uros_ws && cd ~/uros_ws
 git clone --depth 1 -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
 # . /opt/ros/humble/setup.sh
