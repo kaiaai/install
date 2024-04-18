@@ -9,5 +9,5 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-a
 sudo apt update && sudo apt install ros-dev-tools -y
 sudo apt upgrade -y
 sudo apt install ros-iron-desktop -y
-echo 'source /opt/ros/iron/setup.bash' >> ~/.bashrc 
+echo '. /opt/ros/iron/setup.bash' >> ~/.bashrc 
 source /opt/ros/iron/setup.bash
