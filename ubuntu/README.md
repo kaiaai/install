@@ -11,3 +11,6 @@ wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/install_kaiaai
 chmod +x install_kaiaai_humble.sh
 ./install_kaiaai_humble.sh
 ```
+
+### Running Virtual Machine
+- if using VMWare Workstation Player, set Player -> Manage -> Virtual Machine Settings -> Network Adapter -> Network Connection -> to Bridged
