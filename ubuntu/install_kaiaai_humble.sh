@@ -17,7 +17,7 @@ ros2 run micro_ros_setup create_agent_ws.sh
 ros2 run micro_ros_setup build_agent.sh
 rm -rf log/ build/ src/
 
-cd /tmp
+cd ~/.ros
 wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/etc/disable_fastdds_shm.xml
 wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/etc/disable_fastdds_shm_localhost_only.xml
 cd ~
@@ -57,9 +57,9 @@ export MICROROS_DISABLE_SHM=1
 
 if [ "$MICROROS_DISABLE_SHM" = "1" ] ; then
     if [ "$ROS_LOCALHOST_ONLY" = "1" ] ; then
-        export FASTRTPS_DEFAULT_PROFILES_FILE=/tmp/disable_fastdds_shm_localhost_only.xml
+        export FASTRTPS_DEFAULT_PROFILES_FILE=~/.ros/disable_fastdds_shm_localhost_only.xml
     else
-        export FASTRTPS_DEFAULT_PROFILES_FILE=/tmp/disable_fastdds_shm.xml
+        export FASTRTPS_DEFAULT_PROFILES_FILE=~/.ros/disable_fastdds_shm.xml
     fi
 fi
 EOF
