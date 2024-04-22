@@ -48,8 +48,8 @@ colcon build --symlink-install
 rm -rf log/
 
 cat <<EOF >> ~/.bashrc
-. /uros_ws/install/setup.bash
-. /ros_ws/install/setup.bash
+. ~/uros_ws/install/setup.bash
+. ~/ros_ws/install/setup.bash
 alias kaia='ros2 run kaiaai_cli cli'
 
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
