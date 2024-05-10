@@ -2,6 +2,8 @@
 
 [Kaia.ai](https://kaiaai) is a platform for 3D-printable pet robots. Please sign up for an early launch invite [here](https://remake.ai).
 
+Questions? Please visit the [Support Forum](https://github.com/makerspet/support/discussions/)!
+
 ## Download Latest Pre-Built Image
 - Docker Hub [image](https://hub.docker.com/r/kaiaai/kaiaai)
   - `docker pull kaiaai/kaiaai:humble`
