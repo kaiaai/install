@@ -40,6 +40,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_fido src/makerspet_fido \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_loki src/makerspet_loki \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_snoopy src/makerspet_snoopy \
+&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_mini src/makerspet_mini \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_simulations src/kaiaai_simulations \
 &&  git clone --depth 1 https://github.com/kaiaai/kaiaai_cli src/kaiaai_cli \
 &&  git clone --depth 1 https://github.com/kaiaai/kaiaai_python src/kaiaai_python \
