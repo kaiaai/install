@@ -46,7 +46,7 @@ git clone --depth 1 https://github.com/kaiaai/kaiaai_cli src/kaiaai_cli
 git clone --depth 1 https://github.com/kaiaai/kaiaai_python src/kaiaai_python
 git clone --depth 1 https://github.com/kaiaai/m-explore-ros2 src/m-explore-ros2
 git clone --depth 1 https://github.com/kaiaai/auto_mapper src/auto_mapper
-git clone --depth 1 https://github.com/kaiaai/nav2_wfe
+git clone --depth 1 https://github.com/kaiaai/nav2_wfe src/nav2_wfe
 colcon build --symlink-install
 rm -rf log/
 
