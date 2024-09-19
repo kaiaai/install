@@ -53,7 +53,7 @@ rm -rf log/
 cat <<EOF >> ~/.bashrc
 . ~/uros_ws/install/setup.bash
 . ~/ros_ws/install/setup.bash
-alias kaia='ros2 run kaiaai_cli cli'
+alias kaia='ros2 run kaiaai cli'
 
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export MICROROS_DISABLE_SHM=1
