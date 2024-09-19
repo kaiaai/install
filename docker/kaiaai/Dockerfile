@@ -55,7 +55,7 @@ RUN echo ". /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 RUN echo ". /uros_ws/install/setup.bash" >> ~/.bashrc
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
 # RUN echo "export KAIAAI_ROBOT=makerspet_snoopy" >> ~/.bashrc
-RUN echo "alias kaia='ros2 run kaiaai_cli cli'" >> ~/.bashrc
+RUN echo "alias kaia='ros2 run kaiaai cli'" >> ~/.bashrc
 
 RUN rm /*.sh
 COPY ./kaiaai-entrypoint.sh /
