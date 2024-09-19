@@ -37,12 +37,14 @@ sudo apt autoremove -y
 
 git clone -b humble --depth 1 https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs
 git clone -b humble --depth 1 https://github.com/kaiaai/kaiaai src/kaiaai
+git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_telemetry src/kaiaai_telemetry
+git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_teleop src/kaiaai_teleop
+git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_bringup src/kaiaai_bringup
 git clone -b humble --depth 1 https://github.com/makerspet/makerspet_fido src/makerspet_fido
 git clone -b humble --depth 1 https://github.com/makerspet/makerspet_loki src/makerspet_loki
 git clone -b humble --depth 1 https://github.com/makerspet/makerspet_snoopy src/makerspet_snoopy
 git clone -b humble --depth 1 https://github.com/makerspet/makerspet_mini src/makerspet_mini
 git clone -b humble --depth 1 https://github.com/kaiaai/kaiaai_simulations src/kaiaai_simulations
-git clone --depth 1 https://github.com/kaiaai/kaiaai_cli src/kaiaai_cli
 git clone --depth 1 https://github.com/kaiaai/kaiaai_python src/kaiaai_python
 git clone --depth 1 https://github.com/kaiaai/m-explore-ros2 src/m-explore-ros2
 git clone --depth 1 https://github.com/kaiaai/auto_mapper src/auto_mapper
@@ -53,7 +55,7 @@ rm -rf log/
 cat <<EOF >> ~/.bashrc
 . ~/uros_ws/install/setup.bash
 . ~/ros_ws/install/setup.bash
-alias kaia='ros2 run kaiaai_cli cli'
+alias kaia='ros2 run kaiaai cli'
 
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export MICROROS_DISABLE_SHM=1
@@ -65,4 +67,5 @@ if [ "$MICROROS_DISABLE_SHM" = "1" ] ; then
         export FASTRTPS_DEFAULT_PROFILES_FILE=~/.ros/disable_fastdds_shm.xml
     fi
 fi
+echo "Visit https://github.com/kaiaai/kaiaai for help"
 EOF
