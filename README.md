@@ -50,6 +50,9 @@ cd docker
 ```
 
 ## Release history
+### 9/19/2024
+- build with attestation
+
 ### 4/13/2024 (latest)
 - `docker pull kaiaai/kaiaai:humble-04-13-2024`
 - `docker pull kaiaai/kaiaai:iron-04-13-2024`

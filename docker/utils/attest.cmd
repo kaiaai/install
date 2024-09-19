@@ -1,8 +1,6 @@
 docker login
 docker image rm kaiaai/kaiaai:humble
 docker image rm kaiaai/kaiaai:iron
-docker image rm kaiaai/kaiaai-ros-dev:humble
-docker image rm kaiaai/kaiaai-ros-dev:iron
 docker system prune -f -a
 docker buildx rm container
 docker buildx create --name container --driver=docker-container
