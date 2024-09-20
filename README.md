@@ -1,6 +1,6 @@
 # Kaia.ai Docker images
 
-[Kaia.ai](https://kaiaai) is a platform for 3D-printable pet robots. Please sign up for an early launch invite [here](https://remake.ai).
+[Kaia.ai](https://kaiaai) is a software platform for ROS2-based pet robots. Please sign up for an early launch invite [here](https://remake.ai).
 
 Questions? Please visit the [Support Forum](https://github.com/makerspet/support/discussions/)!
 
