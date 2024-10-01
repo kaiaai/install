@@ -46,7 +46,8 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_mini src/makerspet_mini \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet src/makerspet \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_gazebo src/kaiaai_gazebo \
-&&  git clone --depth 1 https://github.com/kaiaai/kaiaai_python src/kaiaai_python \
+&&  git clone --depth 1 https://github.com/kaiaai/kaiaai_web src/kaiaai_web \
+&&  git clone --depth 1 https://github.com/kaiaai/kaiaai_apps src/kaiaai_apps \
 &&  git clone --depth 1 https://github.com/kaiaai/m-explore-ros2 src/m-explore-ros2 \
 &&  git clone --depth 1 https://github.com/kaiaai/auto_mapper src/auto_mapper \
 &&  git clone --depth 1 https://github.com/kaiaai/nav2_wfe src/nav2_wfe \
