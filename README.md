@@ -50,6 +50,10 @@ cd docker
 ```
 
 ## Release history
+
+### 11/20/2024
+- 12V 200RPM N20 motors for Mini
+
 ### 9/19/2024
 - build with attestation
 
