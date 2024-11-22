@@ -51,13 +51,16 @@ cd docker
 
 ## Release history
 
+### 11/21/2024 (latest)
+- added .bash_history with common commands for convenience
+
 ### 11/20/2024
 - 12V 200RPM N20 motors for Mini
 
 ### 9/19/2024
 - build with attestation
 
-### 4/13/2024 (latest)
+### 4/13/2024
 - `docker pull kaiaai/kaiaai:humble-04-13-2024`
 - `docker pull kaiaai/kaiaai:iron-04-13-2024`
 - fixed a webserver script crash
