@@ -51,7 +51,10 @@ cd docker
 
 ## Release history
 
-### 11/21/2024 (latest)
+### 12/2/2024 (latest)
+- fixed .bash_history
+
+### 11/21/2024
 - added .bash_history with common commands for convenience
 
 ### 11/20/2024

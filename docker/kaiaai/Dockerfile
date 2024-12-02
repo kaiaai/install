@@ -63,7 +63,7 @@ RUN echo "alias kaia='ros2 run kaiaai cli'" >> ~/.bashrc
 
 RUN rm /*.sh
 COPY ./kaiaai-entrypoint.sh /
-COPY ./.bash_history ~/
+COPY ./.bash_history /root
 # EXPOSE 8888/udp
 ENTRYPOINT ["/bin/sh", "/kaiaai-entrypoint.sh"]
 CMD ["bash"]
