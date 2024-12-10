@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Install ROS2 Jazzy desktop (with GUI) on Ubuntu 24.04
 #   https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debians.html
 sudo apt install software-properties-common -y

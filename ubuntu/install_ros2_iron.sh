@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Install ROS2 Iron desktop (with GUI) on Ubuntu 22.04
 #   https://docs.ros.org/en/iron/Installation/Ubuntu-Install-Debians.html
 sudo apt install software-properties-common -y
