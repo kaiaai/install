@@ -25,11 +25,13 @@ export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export MICROROS_DISABLE_SHM=1
 
 mkdir ~/ros_ws && cd ~/ros_ws
-sudo apt install -y python3-pip nano inotify-tools \
-ros-jazzy-gazebo-ros-pkgs ros-jazzy-joint-state-publisher-gui \
-ros-jazzy-cartographer-ros \
-ros-jazzy-nav2-map-server ros-jazzy-nav2-bringup \
-ros-jazzy-joint-state-publisher ros-jazzy-xacro
+sudo apt install -y python3-pip nano inotify-tools ros-jazzy-joint-state-publisher-gui ros-jazzy-cartographer-ros ros-jazzy-nav2-map-server ros-jazzy-nav2-bringup
+# https://www.youtube.com/watch?v=b8VwSsbZYn0
+sudo apt install ros-jazzy-ros2-control ros-jazzy-ros2-controllers ros-jazzy-ros-gz
+sudo apt install ros-jazzy-gz-ros2-control
+sudo apt install ros-jazzy-joy*
+
+# TODO fix
 pip3 install aiortc aiohttp opencv-python
 sudo apt autoremove -y
 # sudo rm -rf /var/lib/apt/lists/*
