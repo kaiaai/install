@@ -17,6 +17,6 @@ if [ "$1" = "launch" ]; then
 # ros2 run micro_ros_agent micro_ros_agent udp4 -p 8888
 else
   set -e
-  echo "Visit https://github.com/kaiaai/kaiaai for help"
+  echo "\033[31mVisit https://github.com/kaiaai/kaiaai for help\033[0m"
   exec "$@"
 fi
