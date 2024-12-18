@@ -70,7 +70,7 @@ if [ "$MICROROS_DISABLE_SHM" = "1" ] ; then
         export FASTRTPS_DEFAULT_PROFILES_FILE=~/.ros/disable_fastdds_shm.xml
     fi
 fi
-echo "Visit https://github.com/kaiaai/kaiaai for help"
+echo "\033[31mVisit https://github.com/kaiaai/kaiaai for help\033[0m"
 EOF
 
 cat <<EOF >> ~/.bash_history
