@@ -51,7 +51,11 @@ cd docker
 
 ## Release history
 
-### 12/2/2024 (latest)
+### 12/29/2024 (latest)
+- dropping support for ROS2 `humble` because it is EOL
+  - switched builds to `iron`
+
+### 12/2/2024
 - fixed .bash_history
 
 ### 11/21/2024
