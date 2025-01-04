@@ -4,29 +4,66 @@
 
 Questions? Please visit the [Support Forum](https://github.com/makerspet/support/discussions/)!
 
-## Download Latest Pre-Built Image
-- Docker Hub [image](https://hub.docker.com/r/kaiaai/kaiaai)
-  - `docker pull kaiaai/kaiaai:humble`
-  - `docker pull kaiaai/kaiaai:iron`
+Three ways to install:
+- on a Ubuntu PC directly
+- on a Ubuntu or Windows PC using Docker
+- on a Ubuntu or Windows PC using a virtual machine (e.g. VMware Workstation)
 
-## Docker setup video (outdated)
+## Install on Ubuntu PC directly
+```
+git clone --depth 1 https://github.com/kaiaai/install
+cd install/ubuntu
+./install_ros2_iron.sh
+./install_kaiaai_iron.sh
+```
+
+## Install on a Ubuntu or Windows PC using a virtual machine
+- install [VMware Workstation](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html)
+- download a [Ubuntu image](https://ubuntu.com/download/desktop) and create a virtual machine
+- inside the Ubuntu virtual machine, run the Install-on-Ubuntu-PC-directly instructions above
+
+## Install on Ubuntu or Windows PC using Docker
+- If you are using a Windows PC, read this [blog post](https://kaia.ai/blog/local-pc-setup-windows/)
+  - install [Windows WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install)
+  - install [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
+  - install [VcXsrv](https://sourceforge.net/projects/vcxsrv/), launch it and set display to `0` (zero)
+- When using a Linux PC
+  - install [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) or
+[Docker Desktop](https://docs.docker.com/desktop/install/linux-install/) (with GUI)
+
+On Ubuntu 22.04 you can run
+```
+git clone --depth 1 https://github.com/kaiaai/install
+cd install
+. utils/install_docker_on_ubuntu.sh
+```
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=XOc5kCE3MC0" target="_blank">
  <img src="http://img.youtube.com/vi/XOc5kCE3MC0/maxresdefault.jpg" alt="Robot Arduino firmware, ROS2/Docker PC setup instructions video" width="720" height="405" border="10" />
 </a>
 
-## Install Docker
-- If you are using a Windows PC, install [Windows WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install)
-and [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
-- When using a Linux PC, install [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) or
-[Docker Desktop](https://docs.docker.com/desktop/install/linux-install/) (with GUI).
-On Ubuntu 22.04 you can run
-```
-git clone --depth 1 https://github.com/kaiaai/docker
-cd docker
-. utils/install_docker_on_ubuntu.sh
-```
+### Download Latest Pre-Built Image
+- Docker Hub [image](https://hub.docker.com/r/kaiaai/kaiaai)
+  - `docker pull kaiaai/kaiaai:iron`
+  - `docker pull kaiaai/kaiaai:humble` no longer supported since humble is EOL
 
-## Optional, log in to Docker Hub
+### Run Kaia.ai (create a container)
+- on Windows
+  - open a command line window (or PowerShell or terminal)
+  - `cd` to `docker\utils\`
+  - launch container `.\create_container_iron.cmd`
+  - open another command line window, `cd` to `docker\utils\`
+  - launch an extra bash session `.\launch_bash.cmd`
+  - be sure to install 
+- on Ubuntu
+  - open a bash window
+  - `cd` to `docker\utils\`
+  - launch container `./create_container_iron.sh`
+
+
+# Advanced - how to rebuild images
+
+## log in to Docker Hub
 ```
 sudo docker login -u your_docker_hub_username
 ```

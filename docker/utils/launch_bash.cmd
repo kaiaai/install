@@ -1,0 +1,1 @@
+docker exec -it makerspet bash
