@@ -3,7 +3,7 @@
 xhost local:root
 XAUTH=/tmp/.docker.xauth
 
-docker run -it \
+sudo docker run -it \
   --name=makerspet \
   --rm \
   -p 8888:8888/udp \
@@ -13,7 +13,7 @@ docker run -it \
   --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
   --env="XAUTHORITY=$XAUTH" \
   --volume="$XAUTH:$XAUTH" \
-  --net=host
+  --net=host \
   --privileged \
   kaiaai/kaiaai:iron
 

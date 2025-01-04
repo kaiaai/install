@@ -14,8 +14,8 @@ Make sure your Ubuntu version is 22.x
 ```
 git clone --depth 1 https://github.com/kaiaai/install
 cd install/ubuntu
-./install_ros2_iron_ubuntu_22_04.sh
-./install_kaiaai_iron_ubuntu_22_04.sh
+source install_ros2_iron_ubuntu_22_04.sh
+source install_kaiaai_iron_ubuntu_22_04.sh
 ```
 
 ## Install on a Ubuntu or Windows PC using a virtual machine
@@ -37,8 +37,8 @@ cd install/ubuntu
 On Ubuntu you can run
 ```
 git clone --depth 1 https://github.com/kaiaai/install
-cd install
-. utils/install_docker_on_ubuntu.sh
+cd install/utils
+source install_docker_on_ubuntu.sh
 ```
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=XOc5kCE3MC0" target="_blank">
@@ -47,8 +47,9 @@ cd install
 
 ### Download Latest Pre-Built Image
 - Docker Hub [image](https://hub.docker.com/r/kaiaai/kaiaai)
-  - `docker pull kaiaai/kaiaai:iron`
-  - `docker pull kaiaai/kaiaai:humble` no longer supported since humble is EOL
+  - Ubuntu `sudo docker pull kaiaai/kaiaai:iron`
+  - Ubuntu `sudo docker pull kaiaai/kaiaai:humble` no longer supported since humble is EOL
+  - Windows command line `docker pull kaiaai/kaiaai:iron`
 
 ### Run Kaia.ai (create a container)
 - on Windows
@@ -61,7 +62,7 @@ cd install
 - on Ubuntu
   - open a bash window
   - `cd` to `docker\utils\`
-  - launch container `./create_container_iron.sh`
+  - launch container `source create_container_iron.sh`
 
 
 # Advanced - how to rebuild images
@@ -77,7 +78,7 @@ sudo docker login -u your_docker_hub_username
 ```
 git clone https://github.com/kaiaai/docker
 cd docker
-. utils/build_all.sh
+source utils/build_all.sh
 ```
 
 ## Build all images - Windows
