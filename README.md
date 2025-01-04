@@ -5,9 +5,9 @@
 Questions? Please visit the [Support Forum](https://github.com/makerspet/support/discussions/)!
 
 Three ways to install:
-- on a Ubuntu PC directly
-- on a Ubuntu or Windows PC using Docker
-- on a Ubuntu or Windows PC using a virtual machine (e.g. VMware Workstation)
+- on a Ubuntu PC directly - easiest
+- on a Ubuntu or Windows PC using Docker - recommended
+- on a Ubuntu or Windows PC using a virtual machine
 
 ## Install on Ubuntu PC directly
 ```
@@ -20,7 +20,9 @@ cd install/ubuntu
 ## Install on a Ubuntu or Windows PC using a virtual machine
 - install [VMware Workstation](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html)
 - download a [Ubuntu image](https://ubuntu.com/download/desktop) and create a virtual machine
-- inside the Ubuntu virtual machine, run the Install-on-Ubuntu-PC-directly instructions above
+- inside the Ubuntu virtual machine
+  - run the Install-on-Ubuntu-PC-directly instructions above
+  - or run install-using-Docker instructions below
 
 ## Install on Ubuntu or Windows PC using Docker
 - If you are using a Windows PC, read this [blog post](https://kaia.ai/blog/local-pc-setup-windows/)
