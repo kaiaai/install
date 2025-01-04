@@ -5,16 +5,17 @@
 Questions? Please visit the [Support Forum](https://github.com/makerspet/support/discussions/)!
 
 Three ways to install:
-- on a Ubuntu PC directly - easiest
+- on a Ubuntu 22.04 PC directly - easiest
 - on a Ubuntu or Windows PC using Docker - recommended
 - on a Ubuntu or Windows PC using a virtual machine
 
 ## Install on Ubuntu PC directly
+Make sure your Ubuntu version is 22.x
 ```
 git clone --depth 1 https://github.com/kaiaai/install
 cd install/ubuntu
-./install_ros2_iron.sh
-./install_kaiaai_iron.sh
+./install_ros2_iron_ubuntu_22_04.sh
+./install_kaiaai_iron_ubuntu_22_04.sh
 ```
 
 ## Install on a Ubuntu or Windows PC using a virtual machine
@@ -33,7 +34,7 @@ cd install/ubuntu
   - install [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) or
 [Docker Desktop](https://docs.docker.com/desktop/install/linux-install/) (with GUI)
 
-On Ubuntu 22.04 you can run
+On Ubuntu you can run
 ```
 git clone --depth 1 https://github.com/kaiaai/install
 cd install
