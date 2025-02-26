@@ -76,7 +76,7 @@ sudo docker login -u your_docker_hub_username
 - clone the Kaia.ai Docker repo and run the command below
 ```
 git clone https://github.com/kaiaai/install
-cd docker
+cd install/docker
 source utils/build_all.sh
 ```
 
@@ -84,9 +84,10 @@ source utils/build_all.sh
 - install [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)
 - clone the Kaia.ai Docker repo and run the command below
 ```
-git clone https://github.com/kaiaai/docker
-cd docker
+git clone https://github.com/kaiaai/install
+cd install\docker
 .\utils\build_iron.cmd
+# .\utils\attest_iron.cmd
 ```
 
 ## Release history
