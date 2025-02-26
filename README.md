@@ -48,7 +48,6 @@ source install_docker_on_ubuntu.sh
 ### Download Latest Pre-Built Image
 - Docker Hub [image](https://hub.docker.com/r/kaiaai/kaiaai)
   - Ubuntu `sudo docker pull kaiaai/kaiaai:iron`
-  - Ubuntu `sudo docker pull kaiaai/kaiaai:humble` no longer supported since humble is EOL
   - Windows command line `docker pull kaiaai/kaiaai:iron`
 
 ### Run Kaia.ai (create a container)
@@ -72,11 +71,11 @@ source install_docker_on_ubuntu.sh
 sudo docker login -u your_docker_hub_username
 ```
 
-## Build all images - Linux
+## Build image - Linux
 - install [Docker for Linux](https://docs.docker.com/engine/install/ubuntu/)
 - clone the Kaia.ai Docker repo and run the command below
 ```
-git clone https://github.com/kaiaai/docker
+git clone https://github.com/kaiaai/install
 cd docker
 source utils/build_all.sh
 ```
@@ -87,7 +86,7 @@ source utils/build_all.sh
 ```
 git clone https://github.com/kaiaai/docker
 cd docker
-.\utils\build_all.cmd
+.\utils\build_iron.cmd
 ```
 
 ## Release history
