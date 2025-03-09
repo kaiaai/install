@@ -92,7 +92,12 @@ cd install\docker
 
 ## Release history
 
-### 12/29/2024 (latest)
+### 3/9/2025
+- fixed LiDAR model names in `telem.yaml`
+- mapped `/root/maps` to host
+- added map save, map load and explore_lite to command history
+
+### 12/29/2024
 - dropping support for ROS2 `humble` because it is EOL
   - switched builds to `iron`
 
