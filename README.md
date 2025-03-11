@@ -94,6 +94,7 @@ cd install\docker
 
 ### 3/10/2025
 - major bugfix: Delta, Delta-2G LiDARs decoding in kaiaai_telemetry package
+- matching [Kaia.ai firmware](https://github.com/kaiaai/firmware) release v0.8.3
 
 ### 3/9/2025
 - fixed LiDAR model names in `telem.yaml`
