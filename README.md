@@ -92,6 +92,9 @@ cd install\docker
 
 ## Release history
 
+### 3/10/2025
+- major bugfix: Delta, Delta-2G LiDARs decoding in kaiaai_telemetry package
+
 ### 3/9/2025
 - fixed LiDAR model names in `telem.yaml`
 - mapped `/root/maps` to host
