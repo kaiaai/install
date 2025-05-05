@@ -77,7 +77,7 @@ sudo docker login -u your_docker_hub_username
 ```
 git clone https://github.com/kaiaai/install
 cd install/docker
-source utils/build_all.sh
+source utils/build_iron.sh
 ```
 
 ## Build all images - Windows
