@@ -29,8 +29,8 @@ RUN apt install -y python3-pip nano inotify-tools \
 ros-$ROS_DISTRO-gazebo-ros-pkgs ros-$ROS_DISTRO-joint-state-publisher-gui \
 ros-$ROS_DISTRO-cartographer-ros \
 ros-$ROS_DISTRO-nav2-map-server ros-$ROS_DISTRO-nav2-bringup \
-ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro \
-&&  pip3 install aiortc aiohttp opencv-python
+ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro
+# &&  pip3 install aiortc aiohttp opencv-python
 
 RUN apt install -y ros-jazzy-navigation2 ros-jazzy-nav2-bringup ros-jazzy-nav2-route
 
@@ -48,7 +48,6 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_mini src/makerspet_mini \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet src/makerspet \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_gazebo src/kaiaai_gazebo \
-&&  git clone --depth 1 https://github.com/kaiaai/kaiaai_web src/kaiaai_web \
 &&  git clone --depth 1 https://github.com/kaiaai/kaiaai_apps src/kaiaai_apps \
 &&  git clone --depth 1 https://github.com/kaiaai/m-explore-ros2 src/m-explore-ros2 \
 &&  git clone --depth 1 https://github.com/kaiaai/auto_mapper src/auto_mapper \
@@ -56,6 +55,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  colcon build --symlink-install \
 &&  rm -rf log/
 # rm -rf build/
+# &&  git clone --depth 1 https://github.com/kaiaai/kaiaai_web src/kaiaai_web \
 
 RUN echo ". /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 RUN echo ". /uros_ws/install/setup.bash" >> ~/.bashrc
@@ -75,6 +75,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt install -y tigervnc-standalone-server xfc
 &&  rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8888/udp
-EXPOSE 5601/tcp
+# EXPOSE 5601/tcp
 ENTRYPOINT ["/bin/sh", "/kaiaai-entrypoint.sh"]
 CMD ["bash"]
