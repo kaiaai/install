@@ -32,6 +32,10 @@ ros-$ROS_DISTRO-nav2-map-server ros-$ROS_DISTRO-nav2-bringup \
 ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro \
 &&  pip3 install aiortc aiohttp opencv-python
 
+RUN apt install -y ros-jazzy-navigation2 ros-jazzy-nav2-bringup ros-jazzy-nav2-route
+
+RUN apt update && apt upgrade -y
+
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai src/kaiaai \
