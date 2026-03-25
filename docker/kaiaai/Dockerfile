@@ -3,7 +3,7 @@ FROM osrf/ros:$distro_tag-desktop
 
 WORKDIR /uros_ws
 
-RUN git clone --depth 1 -b $ROS_DISTRO https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup \
+RUN git clone -b $ROS_DISTRO https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup \
 &&  . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  apt update \
 &&  apt install -y ed python3-pip \
@@ -38,25 +38,29 @@ RUN apt install -y ros-iron-navigation2 ros-iron-nav2-bringup
 RUN apt update && apt upgrade -y
 
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai src/kaiaai \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_telemetry src/kaiaai_telemetry \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_teleop src/kaiaai_teleop \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_bringup src/kaiaai_bringup \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_fido src/makerspet_fido \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_loki src/makerspet_loki \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_snoopy src/makerspet_snoopy \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_mini src/makerspet_mini \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet src/makerspet \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_gazebo src/kaiaai_gazebo \
-&&  git clone --depth 1 https://github.com/kaiaai/kaiaai_apps src/kaiaai_apps \
-&&  git clone --depth 1 https://github.com/kaiaai/m-explore-ros2 src/m-explore-ros2 \
-&&  git clone --depth 1 https://github.com/kaiaai/auto_mapper src/auto_mapper \
-&&  git clone --depth 1 https://github.com/kaiaai/nav2_wfe src/nav2_wfe \
+&&  git clone -b $ROS_DISTRO https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs \
+&&  git clone -b $ROS_DISTRO https://github.com/kaiaai/kaiaai src/kaiaai \
+&&  git clone -b $ROS_DISTRO https://github.com/kaiaai/kaiaai_telemetry src/kaiaai_telemetry \
+&&  git clone -b $ROS_DISTRO https://github.com/kaiaai/kaiaai_teleop src/kaiaai_teleop \
+&&  git clone -b $ROS_DISTRO https://github.com/kaiaai/kaiaai_bringup src/kaiaai_bringup \
+&&  git clone -b $ROS_DISTRO https://github.com/makerspet/makerspet_fido src/makerspet_fido \
+&&  git clone -b $ROS_DISTRO https://github.com/makerspet/makerspet_loki src/makerspet_loki \
+&&  git clone -b $ROS_DISTRO https://github.com/makerspet/makerspet_snoopy src/makerspet_snoopy \
+&&  git clone -b $ROS_DISTRO https://github.com/makerspet/makerspet_mini src/makerspet_mini \
+&&  git clone -b $ROS_DISTRO https://github.com/makerspet/makerspet src/makerspet \
+&&  git clone -b $ROS_DISTRO https://github.com/kaiaai/kaiaai_gazebo src/kaiaai_gazebo \
+&&  git clone https://github.com/kaiaai/kaiaai_apps src/kaiaai_apps \
+&&  git clone https://github.com/kaiaai/m-explore-ros2 src/m-explore-ros2 \
+&&  git clone https://github.com/kaiaai/auto_mapper src/auto_mapper \
+&&  git clone https://github.com/kaiaai/nav2_wfe src/nav2_wfe \
 &&  colcon build --symlink-install \
 &&  rm -rf log/
 # rm -rf build/
-# &&  git clone --depth 1 https://github.com/kaiaai/kaiaai_web src/kaiaai_web \
+# &&  git clone https://github.com/kaiaai/kaiaai_web src/kaiaai_web \
+
+WORKDIR /ros_ws/src
+RUN find . -type d -name ".git" -exec rm -rf {} +
+WORKDIR /ros_ws
 
 RUN echo ". /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 RUN echo ". /uros_ws/install/setup.bash" >> ~/.bashrc
