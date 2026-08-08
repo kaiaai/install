@@ -113,6 +113,9 @@ Install a VNC viewer, e.g. https://www.tightvnc.com/ on your Windows or MacOS PC
 
 Launch the VNC viewer. Open `localhost:5061` and enter your VNC password.
 
+### 8/8/2026
+- tightened `navigation.yaml` localization settings back to `iron` values
+
 ### 3/10/2025
 - major bugfix: Delta, Delta-2G LiDARs decoding in kaiaai_telemetry package
 - matching [Kaia.ai firmware](https://github.com/kaiaai/firmware) release v0.8.3
