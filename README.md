@@ -5,18 +5,19 @@
 Questions? Please visit the [Support Forum](https://github.com/makerspet/support/discussions/)!
 
 Three ways to install:
-- on a Ubuntu 22.04 PC directly - easiest
+- on a Ubuntu 24.04 PC directly, without Docker
 - on a Ubuntu or Windows PC using Docker - recommended
 - on a Ubuntu or Windows PC using a virtual machine
 
 ## Install on Ubuntu PC directly
-Make sure your Ubuntu version is 22.x
+Requires Ubuntu 24.04. Skip the first script if ROS2 Jazzy is already installed.
 ```
 git clone --depth 1 https://github.com/kaiaai/install
 cd install/ubuntu
-source install_ros2_iron_ubuntu_22_04.sh
-source install_kaiaai_iron_ubuntu_22_04.sh
+./install_ros2_jazzy_ubuntu_24_04.sh
+./install_kaiaai_jazzy.sh
 ```
+See [ubuntu/README.md](ubuntu/README.md) for what gets installed where.
 
 ## Install on a Ubuntu or Windows PC using a virtual machine
 - install [VMware Workstation](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html)
