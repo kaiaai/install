@@ -38,8 +38,8 @@ See [ubuntu/README.md](ubuntu/README.md) for what gets installed where.
 On Ubuntu you can run
 ```
 git clone --depth 1 https://github.com/kaiaai/install
-cd install/utils
-source install_docker_on_ubuntu.sh
+cd install/docker/utils
+bash install_docker_on_ubuntu.sh
 ```
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=XOc5kCE3MC0" target="_blank">
@@ -67,40 +67,45 @@ source install_docker_on_ubuntu.sh
 
 # Advanced - how to rebuild images
 
-## log in to Docker Hub
-```
-sudo docker login -u your_docker_hub_username
-```
+`kaiaai/kaiaai:jazzy` and `kaiaai/kaiaai:jazzy-dev` are built and pushed to Docker Hub automatically on every push to the `jazzy` branch, see [.github/workflows/docker-image.yml](.github/workflows/docker-image.yml). The image clones the latest `jazzy` branches of the Kaia.ai and Maker's Pet repos at build time.
+
+To build the image locally instead:
 
 ## Build image - Linux
 - install [Docker for Linux](https://docs.docker.com/engine/install/ubuntu/)
-- clone the Kaia.ai Docker repo and run the command below
+- clone the Kaia.ai Docker repo and run the commands below
 ```
 git clone https://github.com/kaiaai/install
-cd install/docker
-source utils/build_iron.sh
+cd install/docker/kaiaai
+sudo docker build --no-cache -t kaiaai/kaiaai:jazzy .
 ```
 
-## Build all images - Windows
+## Build image - Windows
 - install [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)
-- clone the Kaia.ai Docker repo and run the command below
+- clone the Kaia.ai Docker repo and run the commands below
 ```
 git clone https://github.com/kaiaai/install
 cd install\docker
-.\utils\build_iron.cmd
-# .\utils\attest_iron.cmd
+.\utils\build_jazzy.cmd
 ```
+To publish by hand, run `.\utils\push_jazzy.cmd`, or `.\utils\attest_jazzy.cmd` to build and push with provenance attestation.
 
 ## Release history
+
+### 9/15/2026
+- install on Ubuntu 24.04 without Docker: `ubuntu/install_kaiaai_jazzy.sh`, see [ubuntu/README.md](ubuntu/README.md)
+
+### 8/8/2026
+- tightened `navigation.yaml` localization settings back to `iron` values
 
 ### 10/4/2025
 
 - beta `kaiaai/kaiaai:jazzy` released
 
 ### 7/21/2025
-- added VNC server and Xfce, see https://github.com/makerspet/support/discussions/48
+- added VNC server and Xfce to the `iron` image, see https://github.com/makerspet/support/discussions/48
 
-When using VNC instead of X server, run kaiaai/kaiaai docker image as follows in Windows:
+When using VNC instead of X server, run the `iron` image as follows in Windows (the `jazzy` image does not include VNC):
 ```
 docker run --name makerspet -it --rm -v c:\maps:/root/maps -p 8888:8888/udp -p 4430:4430/tcp -p 5901:5901 -e DISPLAY=:1 kaiaai/kaiaai:iron
 ```
@@ -113,9 +118,6 @@ vncserver :1 -geometry 1920x1080 -depth 24 -localhost no
 Install a VNC viewer, e.g. https://www.tightvnc.com/ on your Windows or MacOS PC.
 
 Launch the VNC viewer. Open `localhost:5061` and enter your VNC password.
-
-### 8/8/2026
-- tightened `navigation.yaml` localization settings back to `iron` values
 
 ### 3/10/2025
 - major bugfix: Delta, Delta-2G LiDARs decoding in kaiaai_telemetry package
