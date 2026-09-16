@@ -1,17 +1,22 @@
-## Step 1 - Install ROS2 Humble
-Requires Ubuntu 22.04
+# Install Kaia.ai on Ubuntu without Docker (ROS2 Iron)
+
+Requires Ubuntu 22.04. For ROS2 Jazzy on Ubuntu 24.04, see the [jazzy branch](https://github.com/kaiaai/install/tree/jazzy/ubuntu).
+
+## Step 1 - Install ROS2 Iron
+Skip this step if ROS2 Iron is already installed.
 ```
-wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/install_ros2_humble.sh
-chmod +x install_ros2_humble.sh
-./install_ros2_humble.sh
+git clone --depth 1 -b iron https://github.com/kaiaai/install
+cd install/ubuntu
+./install_ros2_iron_ubuntu_22_04.sh
 ```
 
 ## Step 2 - Install Kaia.ai Platform
 ```
-wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/install_kaiaai_humble.sh
-chmod +x install_kaiaai_humble.sh
-./install_kaiaai_humble.sh
+./install_kaiaai_iron.sh
 ```
+Then open a new terminal, or run `source ~/.bashrc`.
+
+Note `-b iron` above: the repo's default branch is `jazzy`, which does not have these Iron scripts.
 
 ### Running in a Virtual Machine
 - if using VMWare Workstation Player

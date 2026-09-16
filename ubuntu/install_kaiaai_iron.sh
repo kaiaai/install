@@ -18,8 +18,8 @@ ros2 run micro_ros_setup build_agent.sh
 rm -rf log/ build/ src/
 
 cd ~/.ros
-wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/etc/disable_fastdds_shm.xml
-wget https://raw.githubusercontent.com/kaiaai/install/main/ubuntu/etc/disable_fastdds_shm_localhost_only.xml
+wget https://raw.githubusercontent.com/kaiaai/install/iron/ubuntu/etc/disable_fastdds_shm.xml
+wget https://raw.githubusercontent.com/kaiaai/install/iron/ubuntu/etc/disable_fastdds_shm_localhost_only.xml
 cd ~
 
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
