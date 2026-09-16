@@ -64,6 +64,11 @@ bash install_docker_on_ubuntu.sh
   - `cd` to `docker\utils\`
   - launch container `source start_jazzy.sh`
 
+### Shared memory
+ROS2 nodes inside the container pass messages through Fast DDS shared memory, which is faster than loopback UDP.
+- to talk to ROS2 nodes on the host or in another container that shares the container's network (`--net=host`), also share `/dev/shm` with `--ipc=host`, as `start_jazzy.sh` does. Otherwise topics show up but no messages arrive
+- to turn shared memory off, add `-e MICROROS_DISABLE_SHM=1` to `docker run`
+
 
 # Advanced - how to rebuild images
 
@@ -91,6 +96,10 @@ cd install\docker
 To publish by hand, run `.\utils\push_jazzy.cmd`, or `.\utils\attest_jazzy.cmd` to build and push with provenance attestation.
 
 ## Release history
+
+### 9/16/2026
+- Fast DDS shared memory is now on by default; `-e MICROROS_DISABLE_SHM=1` turns it off, now also in `docker exec` shells
+- `start_jazzy.sh` adds `--ipc=host`
 
 ### 9/15/2026
 - install on Ubuntu 24.04 without Docker: `ubuntu/install_kaiaai_jazzy.sh`, see [ubuntu/README.md](ubuntu/README.md)

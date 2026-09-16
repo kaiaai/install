@@ -13,6 +13,7 @@ sudo docker run -it \
   --env="XAUTHORITY=$XAUTH" \
   --volume="$XAUTH:$XAUTH" \
   --net=host \
+  --ipc=host \
   --privileged \
   --add-host="host.docker.internal:host-gateway" \
   kaiaai/kaiaai:jazzy

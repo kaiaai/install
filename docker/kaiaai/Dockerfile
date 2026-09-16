@@ -16,11 +16,13 @@ RUN git clone -b jazzy https://github.com/micro-ROS/micro_ros_setup.git src/micr
 &&  ros2 run micro_ros_setup build_agent.sh \
 &&  rm -rf log/ build/ src/
 
-# Disable shared memory
+# Fast DDS shared memory transport is ON by default: ROS2 nodes in this container
+# pass messages through /dev/shm instead of loopback UDP.
+# To turn it off, e.g. to talk to a host or another container that shares this
+# container's network but not its /dev/shm, run with -e MICROROS_DISABLE_SHM=1
 COPY disable_fastdds_shm.xml disable_fastdds_shm_localhost_only.xml /tmp/
 
 ENV RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-ENV MICROROS_DISABLE_SHM=1
 
 WORKDIR /ros_ws
 
@@ -78,6 +80,9 @@ RUN echo ". /uros_ws/install/setup.bash" >> ~/.bashrc
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
 # RUN echo "export KAIAAI_ROBOT=makerspet_snoopy" >> ~/.bashrc
 RUN echo "alias kaia='ros2 run kaiaai cli'" >> ~/.bashrc
+# `docker exec` shells skip the entrypoint, so honor MICROROS_DISABLE_SHM here too
+COPY ./fastdds_profile.sh /etc/fastdds_profile.sh
+RUN echo ". /etc/fastdds_profile.sh" >> ~/.bashrc
 # RUN echo "alias remake='ros2 run remakeai remake'" >> ~/.bashrc
 
 RUN rm /*.sh
